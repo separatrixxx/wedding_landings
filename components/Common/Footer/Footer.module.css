@@ -1,0 +1,34 @@
+.footer {
+	display: grid;
+	justify-content: center;
+
+	width: 100%;
+	padding: 40px 0;
+	justify-items: center;
+	gap: 20px;
+}
+
+.footerMinimal {
+	background: var(--dark);
+}
+
+.footer > h1 {
+	color: var(--light);
+}
+
+.footerMinimal > h1 {
+	font-family: 'Poiret One', sans-serif;
+	font-weight: 600;
+}
+
+.byText {
+	font-family: 'Bad Script', sans-serif !important;
+	font-weight: 400 !important;
+}
+
+@media (max-width: 580px) {
+	.footer {
+		padding: 20px 0;
+		gap: 10px;
+	}
+}

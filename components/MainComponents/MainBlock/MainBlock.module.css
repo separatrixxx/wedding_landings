@@ -1,0 +1,7 @@
+.mainBlock {
+	display: grid;
+
+	width: 100%;
+	height: fit-content;
+	justify-items: center;
+}

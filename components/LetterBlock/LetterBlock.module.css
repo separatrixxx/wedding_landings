@@ -1,0 +1,36 @@
+.letterBlock {
+	display: grid;
+	gap: 40px;
+}
+
+.letterBlock > h1 {
+	white-space: pre-line;
+}
+
+.letterMinimal {
+	width: calc(100% - 160px);
+	margin: 40px 0;
+	justify-items: left;
+}
+
+.letterMinimal > h1 {
+	font-family: 'Poiret One', sans-serif;
+	font-weight: 600;
+}
+
+.letterMinimal > .letter {
+	font-family: 'Bad Script', sans-serif;
+	font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+	.letterMinimal {
+		width: calc(100% - 120px);
+	}
+}
+
+@media (max-width: 580px) {
+	.letterMinimal {
+		width: calc(100% - 40px);
+	}
+}

@@ -1,0 +1,10 @@
+.timerBlock {
+	display: grid;
+
+	width: 100%;
+	padding: 10px 0 20px 0;
+
+	background: var(--dark);
+	grid-template-columns: repeat(5, auto);
+	justify-items: center;
+}

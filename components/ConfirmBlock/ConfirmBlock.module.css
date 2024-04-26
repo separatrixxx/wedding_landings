@@ -1,0 +1,12 @@
+.confirmBlock {
+	display: grid;
+	justify-content: center;
+
+	width: 100%;
+	padding: 10px 0 20px 0;
+	justify-items: center;
+}
+
+.confirmMinimal {
+	background: var(--dark);
+}

@@ -1,0 +1,35 @@
+.questionItem {
+	display: grid;
+	gap: 20px;
+}
+
+.minimalQuestionrItem > h1 {
+	font-family: 'Poiret One', sans-serif;
+	font-weight: 400;
+}
+
+.questionText {
+	text-transform: uppercase;
+}
+
+.answerBlock {
+	display: grid;
+	grid-template-columns: 20px 1fr;
+	justify-items: left;
+
+	align-items: center;
+	gap: 10px;
+}
+
+.answerBlock > h1 {
+	font-family: 'Bad Script', sans-serif !important;
+}
+
+.answerBlock > input {
+	height: fit-content;
+	padding: 2px 5px;
+
+	border-radius: 10px;
+
+	font-family: 'Bad Script', sans-serif;
+}

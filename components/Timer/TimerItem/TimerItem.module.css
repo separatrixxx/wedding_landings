@@ -1,0 +1,16 @@
+.timerItem {
+	display: grid;
+	justify-items: center;
+}
+
+.timerItem > h1 {
+	color: var(--textLight);
+
+	font-family: 'Michroma', sans-serif;
+	font-weight: 600;
+}
+
+.text {
+	font-family: 'Poiret One', sans-serif !important;
+	font-weight: 400 !important;
+}
