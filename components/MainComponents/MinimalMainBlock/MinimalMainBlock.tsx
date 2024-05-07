@@ -30,7 +30,10 @@ export const MinimalMainBlock = (): JSX.Element => {
                     {setLocale(router.locale).save_date}
                 </Htag>
                 <Htag tag='xl' className={styles.names}>
-                    {data.brideName + ' & ' + data.groomName}
+                    {data.brideName} <span className={styles.and}>&</span> {data.groomName}
+                </Htag>
+                <Htag tag='s' className={styles.time}>
+                    {data.time}
                 </Htag>
                 <Htag tag='m'>
                     {data.location}
@@ -46,7 +49,6 @@ export const MinimalMainBlock = (): JSX.Element => {
 					alt='flower1 img'
 					width={1}
 					height={1}
-					layout="responsive"
 					priority={true}
 					unoptimized={true}
 				/>

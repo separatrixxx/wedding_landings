@@ -9,6 +9,7 @@ import { QuestionItem } from '../QuestionItem/QuestionItem';
 import { useState } from 'react';
 import cn from 'classnames';
 import { AnswerInterface } from '../../../interfaces/data.interface';
+import { Button } from '../../Common/Button/Button';
 
 
 
@@ -32,6 +33,7 @@ export const QuestionsBlock = (): JSX.Element => {
                     ))
                 }
             </div>
+            <Button text={setLocale(router.locale).send} type={data.theme} subtype='dark' onClick={() => {}} />
             <div className={styles.imageBlock}>
 				<Image className={styles.img} draggable='false'
 					loader={() => '/flowerImg2.webp'}
@@ -39,7 +41,6 @@ export const QuestionsBlock = (): JSX.Element => {
 					alt='flower2 img'
 					width={1}
 					height={1}
-					layout="responsive"
 					priority={true}
 					unoptimized={true}
 				/>

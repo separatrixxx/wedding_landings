@@ -8,6 +8,7 @@ export function getData(dispatch: any) {
         groomName: 'Ivan',
         brideName: 'Maria',
         date: '29-08-2024',
+        time: '14:00',
         location: 'Georgia, Tbilisi',
         restourant: 'Restaurant Keto&Kote',
         letter: "Dear guest,\n\nWe're happy to announce that on 29 of August 2024 we will celebrate one of the most special days in our life - our wedding! And we'll be more than happy to share this important moment with you!\n\nPlease, confirm your attendance\n\nMaria&Ivan",
@@ -35,7 +36,8 @@ export function getData(dispatch: any) {
         dressCode: {
             text: "BLACK TIE",
             colors: ["#33522B", "#2A184F", "#FAFFC1", "#E1E4FF"],
-        }
+        },
+        dressCodeText: "We would be grateful if you take our dress code into account when choosing your outfit",
     };
 
     dispatch(setData(data));

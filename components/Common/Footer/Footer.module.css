@@ -26,9 +26,57 @@
 	font-weight: 400 !important;
 }
 
+.byText > a {
+	cursor: pointer;
+	transition-duration: 300ms;
+
+	color: var(--white);
+}
+
+.byText > a:active {
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+	filter: brightness(0.9);
+}
+
+.names {
+	display: grid;
+	align-items: center;
+	grid-template-columns: auto auto 1fr;
+	gap: 10px;
+}
+
+.and {
+	font-family: 'Nixie One', sans-serif !important;
+	font-size: 100px;
+	font-weight: 400 !important;
+}
+
+@media (min-width: 1024px) {
+	.byText > a:hover {
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+		filter: brightness(0.9);
+	}
+}
+
+@media (max-width: 1024px) {
+	.and {
+		font-size: 70px;
+	}
+}
+
 @media (max-width: 580px) {
 	.footer {
 		padding: 20px 0;
 		gap: 10px;
+	}
+
+	.names {
+		gap: 5px;
+	}
+
+	.and {
+		font-size: 45px;
 	}
 }

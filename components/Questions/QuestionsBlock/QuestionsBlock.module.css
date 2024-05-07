@@ -3,6 +3,7 @@
 
 	display: grid;
 	overflow: hidden;
+	justify-content: left;
 
 	width: calc(100% - 160px);
 	margin: 40px 0 0 0;
@@ -18,7 +19,6 @@
 .questionsList {
 	display: grid;
 
-	margin-bottom: 40px;
 	gap: 20px;
 }
 
@@ -41,6 +41,8 @@
 	height: fit-content;
 	object-fit: cover;
 	object-position: center;
+
+	user-select: none;
 }
 
 @media (max-width: 1024px) {

@@ -19,4 +19,5 @@ export const en = {
     questions_for_you: "Small questions for you",
     dress_code: "Dress Code",
     dress_code_text: "We would be grateful if you take our dress code into account when choosing your outfit",
+    send: "Send",
 };

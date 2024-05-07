@@ -13,7 +13,8 @@ export const MainBlock = (): JSX.Element => {
 
     return (
         <div className={styles.mainBlock}>
-            <Button type={data.theme} subtype='dark' text={setLocale(router.locale).add_to_calendar} onClick={() => {}}/>
+            <Button type={data.theme} subtype='dark' text={setLocale(router.locale).add_to_calendar} isMain={true}
+                onClick={() => {}}/>
             {
                 data.theme === 'minimal' ?
                     <MinimalMainBlock /> :

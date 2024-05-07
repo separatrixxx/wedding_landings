@@ -7,6 +7,7 @@ const data: DataInterface = {
   groomName: '',
   brideName: '',
   date: '',
+  time: '',
   location: '',
   restourant: '',
   letter: '',
@@ -14,7 +15,8 @@ const data: DataInterface = {
   dressCode: {
     text: '',
     colors: [],
-  }
+  },
+  dressCodeText: '',
 };
 
 export const dataSlice = createSlice({

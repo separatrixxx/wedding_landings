@@ -31,7 +31,7 @@ export const DressCodeBlock = (): JSX.Element => {
                 }
             </div>
             <Htag tag='s' className={styles.dressDescr}>
-                {setLocale(router.locale).dress_code_text}
+                {data.dressCodeText}
             </Htag>
         </div>
     );

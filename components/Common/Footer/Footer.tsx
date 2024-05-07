@@ -14,11 +14,13 @@ export const Footer = (): JSX.Element => {
         <footer className={cn(styles.footer, {
             [styles.footerMinimal]: data.theme === 'minimal',
         })}>
-            <Htag tag='xl'>
-                {data.brideName + ' & ' + data.groomName}
+            <Htag tag='xl' className={styles.names}>
+                {data.brideName} <span className={styles.and}>&</span> {data.groomName}
             </Htag>
             <Htag tag='s' className={styles.byText}>
-                created by Ori Wedding
+                created by <a href="https://ori.wedding/?lang=en" target="_blank">
+                    Ori Wedding
+                </a>
             </Htag>
         </footer>
     );

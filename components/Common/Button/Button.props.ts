@@ -5,5 +5,6 @@ export interface ButtonProps extends DetailedHTMLProps<HTMLAttributes<HTMLButton
 	text: string,
     type: '' | 'minimal' | 'romance' | 'photo',
     subtype: 'dark' | 'light',
+    isMain?: boolean,
 	onClick: (e: any) => void,
 }

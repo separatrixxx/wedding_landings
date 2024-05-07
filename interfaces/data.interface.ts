@@ -3,11 +3,13 @@ export interface DataInterface {
     groomName: string,
     brideName: string,
     date: string,
+    time: string,
     location: string,
     restourant: string,
     letter: string,
     questions: QuestionInterface[],
     dressCode: DressCodeInterface,
+    dressCodeText: string,
 }
 
 export interface QuestionInterface {
