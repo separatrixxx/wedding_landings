@@ -1,6 +1,8 @@
 .dressCodeBlock {
 	display: grid;
 	gap: 40px;
+
+	padding: 40px 80px;
 }
 
 .dressCodeBlock > h1 {
@@ -9,7 +11,6 @@
 
 .dressCodeMinimal {
 	width: calc(100% - 160px);
-	padding: 40px 80px;
 	justify-items: left;
 
 	background: var(--dark);

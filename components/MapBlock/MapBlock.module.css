@@ -1,0 +1,69 @@
+.mapBlock {
+	display: grid;
+
+	width: 100%;
+	justify-items: center;
+	padding: 40px 80px;
+	gap: 20px;
+}
+
+.mapBlock > h1 {
+	color: var(--textDark);
+}
+
+.mapMinimal {
+	width: calc(100% - 160px);
+	justify-items: left;
+
+	background: var(--light);
+}
+
+.mapMinimal > h1 {
+	font-family: 'Poiret One', sans-serif;
+	font-weight: 600;
+}
+
+.mapDiv {
+	position: relative;
+
+	overflow: hidden;
+
+	width: 100%;
+	height: 500px;
+
+	resize: vertical;
+
+	outline: none;
+
+	font-family: 'Bad Script', sans-serif;
+	font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+	.mapBlock {
+		width: calc(100% - 120px);
+		padding: 40px 60px;
+	}
+
+	.mapDiv {
+		height: 300px;
+	}
+}
+
+@media (max-width: 580px) {
+	.mapBlock {
+		width: calc(100% - 80px);
+		padding: 40px;
+	}
+
+	.mapDiv {
+		height: 200px;
+	}
+}
+
+@media (max-width: 300px) {
+	.mapBlock {
+		width: calc(100% - 40px);
+		padding: 40px 20px;
+	}
+}

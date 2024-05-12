@@ -1,4 +1,4 @@
-.questionsBlock {
+.agendaBlock {
 	position: relative;
 
 	display: grid;
@@ -6,20 +6,22 @@
 	justify-content: left;
 
 	width: calc(100% - 160px);
-	margin: 40px 0 0 0;
+	margin-top: 40px;
 	gap: 40px;
 	justify-items: left;
 }
 
-.questionsMinimal > h1 {
+.agendaMinimal > h1 {
 	font-family: 'Poiret One', sans-serif;
-	font-weight: 600 !important;
+	font-weight: 600;
 }
 
-.questionsList {
+.agendaList {
 	display: grid;
 
-	gap: 20px;
+	gap: 40px;
+
+	margin-bottom: 40px;
 }
 
 .imageBlock {
@@ -46,8 +48,18 @@
 }
 
 @media (max-width: 1024px) {
-	.questionsBlock {
+	.agendaBlock {
 		width: calc(100% - 120px);
+	}
+
+	.imageBlock {
+		width: 35%;
+	}
+}
+
+@media (max-width: 580px) {
+	.agendaBlock {
+		width: calc(100% - 40px);
 	}
 
 	.imageBlock {
@@ -55,12 +67,8 @@
 	}
 }
 
-@media (max-width: 580px) {
-	.questionsBlock {
-		width: calc(100% - 40px);
-	}
-
+@media (max-width: 300px) {
 	.imageBlock {
-		width: 80%;
+		width: 70%;
 	}
 }

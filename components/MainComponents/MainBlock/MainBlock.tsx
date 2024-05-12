@@ -5,6 +5,7 @@ import { Button } from '../../Common/Button/Button';
 import { setLocale } from '../../../helpers/locale.helper';
 import { useRouter } from 'next/router';
 import { MinimalMainBlock } from '../MinimalMainBlock/MinimalMainBlock';
+import { addDateToCalendar } from '../../../helpers/calendar.helper';
 
 
 export const MainBlock = (): JSX.Element => {
@@ -14,7 +15,7 @@ export const MainBlock = (): JSX.Element => {
     return (
         <div className={styles.mainBlock}>
             <Button type={data.theme} subtype='dark' text={setLocale(router.locale).add_to_calendar} isMain={true}
-                onClick={() => {}}/>
+                onClick={() => addDateToCalendar(data, router)}/>
             {
                 data.theme === 'minimal' ?
                     <MinimalMainBlock /> :

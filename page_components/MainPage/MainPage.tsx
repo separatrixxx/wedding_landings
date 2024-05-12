@@ -1,8 +1,11 @@
+import { AgendaBlock } from '../../components/Agenda/AgendaBlock/AgendaBlock';
 import { Footer } from '../../components/Common/Footer/Footer';
 import { ConfirmBlock } from '../../components/ConfirmBlock/ConfirmBlock';
 import { DressCodeBlock } from '../../components/DressCodeBlock/DressCodeBlock';
 import { LetterBlock } from '../../components/LetterBlock/LetterBlock';
 import { MainBlock } from '../../components/MainComponents/MainBlock/MainBlock';
+import { MapBlock } from '../../components/MapBlock/MapBlock';
+import { MessageBlock } from '../../components/MessageBlock/MessageBlock';
 import { QuestionsBlock } from '../../components/Questions/QuestionsBlock/QuestionsBlock';
 import { TimerBlock } from '../../components/Timer/TimerBlock/TimerBlock';
 import styles from './MainPage.module.css';
@@ -28,6 +31,9 @@ export const MainPage = (): JSX.Element => {
                 <ConfirmBlock />
                 <QuestionsBlock />
                 <DressCodeBlock />
+                <AgendaBlock />
+                <MessageBlock />
+                <MapBlock />
                 <Footer />
             </div>
         </>

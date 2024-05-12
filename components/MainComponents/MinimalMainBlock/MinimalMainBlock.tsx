@@ -15,13 +15,13 @@ export const MinimalMainBlock = (): JSX.Element => {
     return (
         <div className={styles.minimalMainBlock}>
             <div className={styles.dataBlock}>
-                <Htag tag='l'>
+                <Htag tag='l' className={styles.boldText}>
                     {setLocale(router.locale).join_us}
                 </Htag>
                 <Htag tag='xxl' className={styles.date}>
                     {formatDate(data.date)}
                 </Htag>
-                <Htag tag='l'>
+                <Htag tag='l' className={styles.boldText}>
                     {setLocale(router.locale).as_we_say}
                 </Htag>
             </div>

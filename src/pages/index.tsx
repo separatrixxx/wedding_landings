@@ -8,13 +8,18 @@ import { useDispatch } from "react-redux";
 
 
 function Main(): JSX.Element {
-  const router = useRouter();
-  
+  const router = useRouter(); 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getData(dispatch);
-  }, [dispatch]);
+    let theme = router.query.theme;
+
+    if (theme !== 'minimal' && theme !== 'romance' && theme !== 'photo') {
+      theme = 'minimal';
+    }
+    
+    getData(dispatch, theme as '' | 'minimal' | 'romance' | 'photo');
+  }, [dispatch, router.query]);
 
   return (
     <>

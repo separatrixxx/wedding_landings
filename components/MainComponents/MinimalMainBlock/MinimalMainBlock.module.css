@@ -32,6 +32,10 @@
 	font-weight: 600 !important;
 }
 
+.boldText {
+	font-weight: 600 !important;
+}
+
 .namesBlock {
 	display: grid;
 

@@ -29,13 +29,13 @@
 }
 
 .m {
-	font-size: 30px;
+	font-size: 26px;
 	font-weight: 400;
 	font-style: normal;
 }
 
 .s {
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: 400;
 	font-style: normal;
 }
@@ -54,11 +54,11 @@
 	}
 
 	.m {
-		font-size: 25px;
+		font-size: 22px;
 	}
 
 	.s {
-		font-size: 17px;
+		font-size: 16px;
 	}
 }
 
@@ -76,11 +76,11 @@
 	}
 
 	.m {
-		font-size: 15px;
+		font-size: 12px;
 	}
 
 	.s {
-		font-size: 10px;
+		font-size: 9px;
 	}
 }
 
@@ -98,10 +98,10 @@
 	}
 
 	.m {
-		font-size: 10px;
+		font-size: 7px;
 	}
 
 	.s {
-		font-size: 7px;
+		font-size: 6px;
 	}
 }

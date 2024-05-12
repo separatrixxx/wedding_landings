@@ -9,6 +9,7 @@ const data: DataInterface = {
   date: '',
   time: '',
   location: '',
+  locationMap: '',
   restourant: '',
   letter: '',
   questions: [],
@@ -17,6 +18,8 @@ const data: DataInterface = {
     colors: [],
   },
   dressCodeText: '',
+  agenda: [],
+  howToGet: [],
 };
 
 export const dataSlice = createSlice({

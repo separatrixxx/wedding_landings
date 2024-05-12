@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
 import { AppState } from '../../features/store/store';
 import { setLocale } from '../../helpers/locale.helper';
-import cn from 'classnames';
 import { Htag } from '../Common/Htag/Htag';
+import cn from 'classnames';
 
 
 export const DressCodeBlock = (): JSX.Element => {
