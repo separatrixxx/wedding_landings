@@ -1,5 +1,8 @@
 .confirmBlock {
+	position: relative;
+
 	display: grid;
+	overflow: hidden;
 	justify-content: center;
 
 	width: 100%;
@@ -8,5 +11,90 @@
 }
 
 .confirmMinimal {
-	background: var(--dark);
+	background: var(--primaryMinimal);
+}
+
+.confirmRomance {
+	background: var(--primaryRomance);
+}
+
+.confirmPhoto {
+	background: var(--primaryPhoto);
+}
+
+.modalBody {
+	display: grid;
+	align-items: center;
+
+	width: 500px;
+	height: 100px;
+
+	border-radius: 20px;
+	background: var(--light);
+	justify-items: center;
+}
+
+.modalBody > input {
+	width: 80%;
+	height: 30px;
+	padding: 3px 10px;
+
+	border-radius: 10px;
+	outline: 1px solid var(--dark);
+
+	font-family: var(--fontCommon);
+	font-weight: 400;
+}
+
+.imageBlock {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+
+	display: grid;
+	overflow: hidden;
+
+	width: 100%;
+	height: fit-content;
+
+	opacity: 0.5;
+}
+
+.img {
+	width: 100%;
+	height: fit-content;
+	object-fit: cover;
+	object-position: center;
+
+	user-select: none;
+}
+
+@media (max-width: 580px) {
+	.modalBody {
+		width: 250px;
+		height: 70px;
+
+		border-radius: 10px;
+	}
+
+	.modalBody > input {
+		height: 20px;
+		padding: 1px 5px;
+
+		border-radius: 5px;
+	}
+}
+
+@media (max-width: 300px) {
+	.modalBody {
+		width: 200px;
+		height: 50px;
+	}
+}
+
+@media (max-width: 200px) {
+	.modalBody {
+		width: 100%;
+	}
 }

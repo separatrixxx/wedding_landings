@@ -1,3 +1,4 @@
+import styles from './MainPage.module.css';
 import { AgendaBlock } from '../../components/Agenda/AgendaBlock/AgendaBlock';
 import { Footer } from '../../components/Common/Footer/Footer';
 import { ConfirmBlock } from '../../components/ConfirmBlock/ConfirmBlock';
@@ -8,12 +9,16 @@ import { MapBlock } from '../../components/MapBlock/MapBlock';
 import { MessageBlock } from '../../components/MessageBlock/MessageBlock';
 import { QuestionsBlock } from '../../components/Questions/QuestionsBlock/QuestionsBlock';
 import { TimerBlock } from '../../components/Timer/TimerBlock/TimerBlock';
-import styles from './MainPage.module.css';
 import { Toaster } from 'react-hot-toast';
+import { useSelector } from 'react-redux';
+import { AppState } from '../../features/store/store';
+import { Modal } from '../../components/Common/Modal/Modal';
+import { useState } from 'react';
+import cn from 'classnames';
 
 
 export const MainPage = (): JSX.Element => {
-    
+    const data = useSelector((state: AppState) => state.data.data);
 
     return (
         <>
@@ -24,15 +29,39 @@ export const MainPage = (): JSX.Element => {
 					duration: 2000,
 				}}
 			/>
-            <div className={styles.wrapper}>
+            <div className={cn(styles.wrapper, {
+                [styles.wrapperMinimal]: data.theme === 'minimal',
+                [styles.wrapperRomance]: data.theme === 'romance',
+                [styles.wrapperPhoto]: data.theme === 'photo',
+            })}>
                 <MainBlock />
-                <TimerBlock />
+                {
+                    data.blocks.timer ?
+                        <TimerBlock />
+                    : <></>
+                }
                 <LetterBlock />
                 <ConfirmBlock />
-                <QuestionsBlock />
-                <DressCodeBlock />
-                <AgendaBlock />
-                <MessageBlock />
+                {
+                    data.blocks.questions ?
+                        <QuestionsBlock />
+                    : <></>
+                }
+                {
+                    data.blocks.dressCode ?
+                        <DressCodeBlock />
+                    : <></>
+                }
+                {
+                    data.blocks.agenda ?
+                        <AgendaBlock />
+                    : <></>
+                }
+                {
+                    data.blocks.message ?
+                        <MessageBlock />
+                    : <></>
+                }
                 <MapBlock />
                 <Footer />
             </div>

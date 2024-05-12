@@ -4,7 +4,18 @@
 	width: 100%;
 	padding: 10px 0 20px 0;
 
-	background: var(--dark);
-	grid-template-columns: repeat(5, auto);
+	grid-template-columns: repeat(5, 20%);
 	justify-items: center;
+}
+
+.minimalTimerBlock {
+	background: var(--primaryMinimal);
+}
+
+.romanceTimerBlock {
+	background: var(--primaryRomance);
+}
+
+.photoTimerBlock {
+	background: var(--primaryPhoto);
 }

@@ -11,9 +11,19 @@
 	gap: 20px;
 }
 
-.getThereDiv > h1 {
-	font-family: 'Poiret One', sans-serif;
+.getThereItemMinimal > .getThereDiv > h1 {
+	font-family: var(--fontMinimal1);
 	font-weight: 400;
+}
+
+.getThereItemRomance > .getThereDiv > h1 {
+	font-family: var(--fontRomance1);
+	font-weight: 400;
+}
+
+.getThereItemPhoto > .getThereDiv > h1 {
+	font-family: var(--fontPhoto1);
+	font-weight: 300 !important;
 }
 
 .title {

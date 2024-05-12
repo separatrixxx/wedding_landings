@@ -15,6 +15,8 @@ export const GetThereBlock = (): JSX.Element => {
     return (
         <div className={cn(styles.getThereBlock, {
             [styles.getThereMinimal]: data.theme === 'minimal',
+            [styles.getThereRomance]: data.theme === 'romance',
+            [styles.getTherePhoto]: data.theme === 'photo',
         })}>
             <Htag tag='m'>
                 {setLocale(router.locale).get_there_text + ':'}
@@ -22,7 +24,7 @@ export const GetThereBlock = (): JSX.Element => {
             <div className={styles.howToGetList}>
                 {
                     data.howToGet.map(h => (
-                        <GetThereItem key={h.title} hoToGet={h} />
+                        <GetThereItem key={h.title} hoToGet={h} type={data.theme} />
                     ))
                 }
             </div>

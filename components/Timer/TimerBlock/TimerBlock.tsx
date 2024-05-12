@@ -5,7 +5,7 @@ import { AppState } from '../../../features/store/store';
 import { TimerItem } from '../TimerItem/TimerItem';
 import { setLocale } from '../../../helpers/locale.helper';
 import { useEffect, useMemo, useState } from 'react';
-
+import cn from 'classnames';
 
 
 export const TimerBlock = (): JSX.Element => {
@@ -45,7 +45,11 @@ export const TimerBlock = (): JSX.Element => {
     const text = ['weeks', 'days', 'hours', 'minutes', 'seconds'];
 
     return (
-        <div className={styles.timerBlock}>
+        <div className={cn(styles.timerBlock, {
+            [styles.minimalTimerBlock]: data.theme === 'minimal',
+            [styles.romanceTimerBlock]: data.theme === 'romance',
+            [styles.photoTimerBlock]: data.theme === 'photo',
+        })}>
             {
                 timeLeft.map((n, i) => (
                     <TimerItem key={n + setLocale(router.locale)[text[i] as 'weeks']} type={data.theme} num={n} text={setLocale(router.locale)[text[i] as 'weeks']} />

@@ -8,8 +8,6 @@ body {
 	-ms-user-select: auto;
 	user-select: auto;
 
-	background: var(--white);
-
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 	-webkit-tap-highlight-color: transparent;
 }
@@ -45,9 +43,44 @@ a {
 }
 
 :root {
+	/* colors */
+
+	/* common */
 	--dark: #171717;
 	--light: #FFF;
 	--textDark: #171717;
 	--textLight: #FFF;
 	--error: #FF1500;
+
+	/* minimal */
+	--primaryMinimal: #171717;
+	--backgroundMinimal: #FFF;
+
+	/* romance */
+	--primaryRomance: #838F6B;
+	--backgroundRomance: #F1E2E2;
+
+	/* photo */
+	--primaryPhoto: #1B1917;
+	--backgroundPhoto: #EBE5DD;
+
+	/* fonts */
+
+	/* common */
+	--fontCommon: 'Bad Script', sans-serif;
+
+	/* minimal */
+	--fontMinimal1: 'Poiret One', sans-serif;
+	--fontMinimal2: 'Michroma', sans-serif;
+	--fontMinimal3: 'Nixie One', sans-serif;
+
+	/* romance */
+	--fontRomance1: 'Cormorant SC', sans-serif;
+	--fontRomance2: 'Amethysta', sans-serif;
+	--fontRomance3: 'Cormorant Infant', sans-serif;
+
+	/* photo */
+	--fontPhoto1: 'Jost', sans-serif;
+	--fontPhoto2: 'Syncopate', sans-serif;
+	--fontPhoto3: 'Jost', sans-serif;
 }

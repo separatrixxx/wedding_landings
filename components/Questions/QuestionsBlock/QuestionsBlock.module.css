@@ -3,7 +3,6 @@
 
 	display: grid;
 	overflow: hidden;
-	justify-content: left;
 
 	width: calc(100% - 160px);
 	margin: 40px 0 0 0;
@@ -12,18 +11,62 @@
 }
 
 .questionsMinimal > h1 {
-	font-family: 'Poiret One', sans-serif;
+	z-index: 2;
+
+	font-family: var(--fontMinimal1);
 	font-weight: 600 !important;
 }
 
+.questionsRomance > h1 {
+	z-index: 2;
+
+	font-family: var(--fontRomance1);
+	font-weight: 600 !important;
+	justify-self: center;
+}
+
+.questionsPhoto > h1 {
+	z-index: 2;
+
+	font-family: var(--fontPhoto1);
+	font-weight: 400 !important;
+}
+
 .questionsList {
+	z-index: 2;
+
 	display: grid;
 
 	gap: 20px;
 }
 
+.modalBody {
+	display: grid;
+	align-items: center;
+
+	width: 500px;
+	height: 100px;
+
+	border-radius: 20px;
+	background: var(--light);
+	justify-items: center;
+}
+
+.modalBody > input {
+	width: 80%;
+	height: 30px;
+	padding: 3px 10px;
+
+	border-radius: 10px;
+	outline: 1px solid var(--dark);
+
+	font-family: var(--fontCommon);
+	font-weight: 400;
+}
+
 .imageBlock {
 	position: absolute;
+	z-index: 1;
 	right: 0;
 	bottom: 0;
 
@@ -34,6 +77,12 @@
 	height: fit-content;
 
 	opacity: 0.2;
+}
+
+.imageBlockPhoto {
+	width: 20%;
+
+	opacity: 0.7;
 }
 
 .img {
@@ -53,6 +102,10 @@
 	.imageBlock {
 		width: 50%;
 	}
+
+	.imageBlockPhoto {
+		width: 40%;
+	}
 }
 
 @media (max-width: 580px) {
@@ -62,5 +115,9 @@
 
 	.imageBlock {
 		width: 80%;
+	}
+
+	.imageBlockPhoto {
+		width: 70%;
 	}
 }

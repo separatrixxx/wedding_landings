@@ -19,6 +19,8 @@ export const MessageBlock = (): JSX.Element => {
     return (
         <div className={cn(styles.messageBlock, {
             [styles.messageMinimal]: data.theme === 'minimal',
+            [styles.messageRomance]: data.theme === 'romance',
+            [styles.messagePhoto]: data.theme === 'photo',
         })}>
             <Htag tag='xl'>
                 {setLocale(router.locale).message_text}
@@ -27,7 +29,7 @@ export const MessageBlock = (): JSX.Element => {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 name='message'
-                aria-label='message' />;
+                aria-label='message' />
             <Button text={setLocale(router.locale).send} type={data.theme} subtype='light'
                 onClick={() => sendMessage(message, setMessage, router)} />
         </div>

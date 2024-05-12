@@ -5,12 +5,38 @@
 
 .timerItem > h1 {
 	color: var(--textLight);
+}
 
-	font-family: 'Michroma', sans-serif;
+.minimalTimerItem > h1 {
+	font-family: var(--fontMinimal2) !important;
 	font-weight: 600;
 }
 
+.romanceTimerItem > h1 {
+	font-family: var(--fontRomance2) !important;
+	font-weight: 600;
+}
+
+.photoTimerItem > h1 {
+	font-family: var(--fontPhoto2) !important;
+	font-weight: 400;
+}
+
 .text {
-	font-family: 'Poiret One', sans-serif !important;
+	text-transform: uppercase;
+}
+
+.minimalTimerItem > .text {
+	font-family: var(--fontMinimal1) !important;
 	font-weight: 400 !important;
+}
+
+.romanceTimerItem > .text {
+	font-family: var(--fontRomance1) !important;
+	font-weight: 400 !important;
+}
+
+.photoTimerItem > .text {
+	font-family: var(--fontPhoto1) !important;
+	font-weight: 200 !important;
 }

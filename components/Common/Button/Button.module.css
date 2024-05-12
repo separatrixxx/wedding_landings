@@ -1,4 +1,6 @@
 .button {
+	z-index: 2;
+
 	display: grid;
 
 	width: fit-content;
@@ -10,7 +12,11 @@
 	transition-duration: 300ms;
 	text-transform: uppercase;
 
+	color: var(--textLight);
+	border: none;
+
 	font-size: 16px;
+	font-weight: 400;
 }
 
 .buttonMain {
@@ -25,14 +31,24 @@
 }
 
 .buttonMinimal {
-	color: var(--textLight);
-	background: var(--dark);
+	background: var(--primaryMinimal);
 
-	font-family: 'Poiret One', sans-serif;
-	font-weight: 400;
+	font-family: var(--fontMinimal1);
 }
 
-.buttonMinimalLight {
+.buttonRomance {
+	background: var(--primaryRomance);
+
+	font-family: var(--fontRomance1);
+}
+
+.buttonPhoto {
+	background: var(--primaryPhoto);
+
+	font-family: var(--fontPhoto1);
+}
+
+.buttonLight {
 	color: var(--textDark);
 	background: var(--light);
 }

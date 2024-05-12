@@ -20,6 +20,14 @@ const data: DataInterface = {
   dressCodeText: '',
   agenda: [],
   howToGet: [],
+  blocks: {
+    timer: false,
+    questions: false,
+    dressCode: false,
+    agenda: false,
+    message: false,
+    howToGet: false,
+  }
 };
 
 export const dataSlice = createSlice({

@@ -31,4 +31,5 @@ export const en = {
     message_error: "Write a message first",
     questions_sent_succesfully: "Your answers have been sent successfully",
     questions_error: "Answer all questions first",
+    enter_your_name: "Enter your name",
 };

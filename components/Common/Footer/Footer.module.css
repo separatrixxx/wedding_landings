@@ -9,7 +9,15 @@
 }
 
 .footerMinimal {
-	background: var(--dark);
+	background: var(--primaryMinimal);
+}
+
+.footerRomance {
+	background: var(--primaryRomance);
+}
+
+.footerPhoto {
+	background: var(--primaryPhoto);
 }
 
 .footer > h1 {
@@ -17,12 +25,22 @@
 }
 
 .footerMinimal > h1 {
-	font-family: 'Poiret One', sans-serif;
+	font-family: var(--fontMinimal1);
 	font-weight: 600;
 }
 
+.footerRomance > h1 {
+	font-family: var(--fontRomance1);
+	font-weight: 600;
+}
+
+.footerPhoto > h1 {
+	font-family: var(--fontPhoto1);
+	font-weight: 400;
+}
+
 .byText {
-	font-family: 'Bad Script', sans-serif !important;
+	font-family: var(--fontCommon) !important;
 	font-weight: 400 !important;
 }
 
@@ -47,9 +65,22 @@
 }
 
 .and {
-	font-family: 'Nixie One', sans-serif !important;
 	font-size: 100px;
+}
+
+.footerMinimal > h1 > .and {
+	font-family: var(--fontMinimal3) !important;
 	font-weight: 400 !important;
+}
+
+.footerRomance > h1 > .and {
+	font-family: var(--fontRomance3) !important;
+	font-weight: 400 !important;
+}
+
+.footerPhoto > h1 > .and {
+	font-family: var(--fontPhoto3) !important;
+	font-weight: 200 !important;
 }
 
 @media (min-width: 1024px) {

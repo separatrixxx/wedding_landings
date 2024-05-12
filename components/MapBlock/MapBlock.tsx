@@ -15,6 +15,8 @@ export const MapBlock = (): JSX.Element => {
     return (
         <div className={cn(styles.mapBlock, {
             [styles.mapMinimal]: data.theme === 'minimal',
+            [styles.mapRomance]: data.theme === 'romance',
+            [styles.mapPhoto]: data.theme === 'photo',
         })}>
             <Htag tag='xl'>
                 {setLocale(router.locale).map_text}
@@ -22,7 +24,11 @@ export const MapBlock = (): JSX.Element => {
             <div className={styles.mapDiv}>
                 <iframe src={data.locationMap} width="100%" height="100%" loading="lazy" />
             </div>
-            <GetThereBlock />
+            {
+                data.blocks.howToGet ?
+                    <GetThereBlock />
+                : <></>
+            }
         </div>
     );
 };

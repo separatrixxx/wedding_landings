@@ -31,4 +31,5 @@ export const ru = {
     message_error: "Сначала напишите сообщение",
     questions_sent_succesfully: "Ваши ответы успешно отправлены",
     questions_error: "Сначала ответьте на все вопросы",
+    enter_your_name: "Введите ваше имя",
 };

@@ -13,6 +13,8 @@ export const Footer = (): JSX.Element => {
     return (
         <footer className={cn(styles.footer, {
             [styles.footerMinimal]: data.theme === 'minimal',
+            [styles.footerRomance]: data.theme === 'romance',
+            [styles.footerPhoto]: data.theme === 'photo',
         })}>
             <Htag tag='xl' className={styles.names}>
                 {data.brideName} <span className={styles.and}>&</span> {data.groomName}

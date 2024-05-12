@@ -4,3 +4,15 @@
 	width: 100%;
 	justify-items: center;
 }
+
+.wrapperMinimal {
+	background: var(--backgroundMinimal);
+}
+
+.wrapperRomance {
+	background: var(--backgroundRomance);
+}
+
+.wrapperPhoto {
+	background: var(--backgroundPhoto);
+}

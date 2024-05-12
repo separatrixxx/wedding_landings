@@ -3,7 +3,6 @@
 
 	display: grid;
 	overflow: hidden;
-	justify-content: left;
 
 	width: calc(100% - 160px);
 	margin-top: 40px;
@@ -12,20 +11,40 @@
 }
 
 .agendaMinimal > h1 {
-	font-family: 'Poiret One', sans-serif;
+	z-index: 2;
+
+	font-family: var(--fontMinimal1);
 	font-weight: 600;
 }
 
+.agendaRomance > h1 {
+	z-index: 2;
+
+	font-family: var(--fontRomance1);
+	font-weight: 600;
+	justify-self: center;
+}
+
+.agendaPhoto > h1 {
+	z-index: 2;
+
+	font-family: var(--fontPhoto1);
+	font-weight: 400;
+}
+
 .agendaList {
+	z-index: 2;
+
 	display: grid;
 
-	gap: 40px;
-
 	margin-bottom: 40px;
+
+	gap: 40px;
 }
 
 .imageBlock {
 	position: absolute;
+	z-index: 1;
 	right: 0;
 	bottom: 0;
 

@@ -21,6 +21,8 @@ export const AgendaBlock = (): JSX.Element => {
     return (
         <div className={cn(styles.agendaBlock, {
             [styles.agendaMinimal]: data.theme === 'minimal',
+            [styles.agendaRomance]: data.theme === 'romance',
+            [styles.agendaPhoto]: data.theme === 'photo',
         })}>
             <Htag tag='xl'>
                 {setLocale(router.locale).wedding_agenda}
@@ -32,17 +34,21 @@ export const AgendaBlock = (): JSX.Element => {
                     ))
                 }
             </div>
-            <div className={styles.imageBlock}>
-				<Image className={styles.img} draggable='false'
-					loader={() => '/flowerImg3.webp'}
-					src='/flowerImg3.webp'
-					alt='flower3 img'
-					width={1}
-					height={1}
-					priority={true}
-					unoptimized={true}
-				/>
-			</div>
+            {
+                data.theme === 'minimal' ?
+                    <div className={styles.imageBlock}>
+                        <Image className={styles.img} draggable='false'
+                            loader={() => '/flowerImg3.webp'}
+                            src='/flowerImg3.webp'
+                            alt='flower3 img'
+                            width={1}
+                            height={1}
+                            priority={true}
+                            unoptimized={true}
+                        />
+                    </div>
+                : <></>
+            }
         </div>
     );
 };

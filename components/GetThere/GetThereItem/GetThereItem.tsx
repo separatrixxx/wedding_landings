@@ -6,7 +6,7 @@ import { useState } from 'react';
 import cn from 'classnames';
 
 
-export const GetThereItem = ({ hoToGet }: GetThereItemProps): JSX.Element => {
+export const GetThereItem = ({ hoToGet, type }: GetThereItemProps): JSX.Element => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const variants = {
@@ -19,7 +19,11 @@ export const GetThereItem = ({ hoToGet }: GetThereItemProps): JSX.Element => {
     };
 
     return (
-        <div className={styles.getThereItem}>
+        <div className={cn(styles.getThereItem, {
+            [styles.getThereItemMinimal]: type === 'minimal',
+            [styles.getThereItemRomance]: type === 'romance',
+            [styles.getThereItemPhoto]: type === 'photo',
+        })}>
             <motion.span className={styles.arrow}
                 variants={variants}
                 initial={isOpen ? 'visible' : 'hidden'}

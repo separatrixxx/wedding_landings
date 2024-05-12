@@ -2,9 +2,9 @@
 	display: grid;
 
 	width: 100%;
-	justify-items: center;
-	gap: 20px;
+	width: calc(100% - 160px);
 	margin-top: 20px;
+	gap: 20px;
 }
 
 .getThereBlock > h1 {
@@ -13,16 +13,19 @@
 	color: var(--textDark);
 }
 
-.getThereMinimal {
-	width: calc(100% - 160px);
-	justify-items: left;
-
-	background: var(--light);
+.getThereMinimal > h1 {
+	font-family: var(--fontMinimal1);
+	font-weight: 600;
 }
 
-.getThereMinimal > h1 {
-	font-family: 'Poiret One', sans-serif;
+.getThereRomance > h1 {
+	font-family: var(--fontRomance1);
 	font-weight: 600;
+}
+
+.getTherePhoto > h1 {
+	font-family: var(--fontPhoto1);
+	font-weight: 400;
 }
 
 .howToGetList {

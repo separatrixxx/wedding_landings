@@ -1,33 +1,62 @@
 .dressCodeBlock {
+	position: relative;
+
 	display: grid;
-	gap: 40px;
+	overflow: hidden;
+
+	width: calc(100% - 160px);
 
 	padding: 40px 80px;
+	gap: 40px;
+	justify-items: left;
 }
 
 .dressCodeBlock > h1 {
+	z-index: 2;
+
 	color: var(--textLight);
 }
 
 .dressCodeMinimal {
-	width: calc(100% - 160px);
-	justify-items: left;
+	background: var(--primaryMinimal);
+}
 
-	background: var(--dark);
+.dressCodeRomance {
+	background: var(--primaryRomance);
+}
+
+.dressCodeRomance > .title {
+	justify-self: center;
+}
+
+.dressCodePhoto {
+	background: var(--primaryPhoto);
 }
 
 .dressCodeMinimal > h1 {
-	font-family: 'Poiret One', sans-serif;
+	font-family: var(--fontMinimal1);
 	font-weight: 600;
 }
 
-.dressCodeMinimal > .dressCodeText {
+.dressCodeRomance > h1 {
+	font-family: var(--fontRomance1);
+	font-weight: 600;
+}
+
+.dressCodePhoto > h1 {
+	font-family: var(--fontPhoto1);
+	font-weight: 400;
+}
+
+.dressCodeBlock > .dressCodeText {
 	text-transform: uppercase;
 
 	font-weight: 400;
 }
 
 .dressCodeColorsDiv {
+	z-index: 2;
+
 	display: grid;
 	gap: 40px;
 }
@@ -40,8 +69,32 @@
 }
 
 .dressDescr {
-	font-family: 'Bad Script', sans-serif !important;
+	font-family: var(--fontCommon) !important;
 	font-weight: 400 !important;
+}
+
+.imageBlock {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+
+	display: grid;
+	overflow: hidden;
+
+	width: 100%;
+	height: fit-content;
+
+	opacity: 0.5;
+}
+
+.img {
+	width: 100%;
+	height: fit-content;
+	object-fit: cover;
+	object-position: center;
+
+	user-select: none;
 }
 
 @media (max-width: 1024px) {

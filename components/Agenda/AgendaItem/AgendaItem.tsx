@@ -9,6 +9,9 @@ export const AgendaItem = ({ agenda, type }: AgendaItemProps): JSX.Element => {
     return (
         <div className={cn(styles.agendaItem, {
             [styles.minimalAgendaItem]: type === 'minimal',
+            [styles.romanceAgendaItem]: type === 'romance',
+            [styles.photoAgendaItem]: type === 'photo',
+
         })}>
             <Htag tag='xxl'>
                 {agenda.time}

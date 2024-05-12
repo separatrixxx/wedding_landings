@@ -1,36 +1,90 @@
 .letterBlock {
+	position: relative;
+
 	display: grid;
+	overflow: hidden;
+
+	width: calc(100% - 160px);
+	margin-top: 40px;
+	padding-bottom: 40px;
 	gap: 40px;
 }
 
 .letterBlock > h1 {
+	z-index: 2;
+
 	white-space: pre-line;
 }
 
 .letterMinimal {
-	width: calc(100% - 160px);
-	margin: 40px 0;
 	justify-items: left;
 }
 
 .letterMinimal > h1 {
-	font-family: 'Poiret One', sans-serif;
+	font-family: var(--fontMinimal1);
 	font-weight: 600;
 }
 
-.letterMinimal > .letter {
-	font-family: 'Bad Script', sans-serif;
+.letterRomance {
+	justify-items: center;
+}
+
+.letterRomance > h1 {
+	font-family: var(--fontRomance1);
+	font-weight: 600;
+}
+
+.letterPhoto > h1 {
+	font-family: var(--fontPhoto1);
 	font-weight: 400;
+	grid-template-columns: 25% 1fr;
+}
+
+.letterBlock > .letter {
+	font-family: var(--fontCommon);
+	font-weight: 400;
+}
+
+.imageBlock {
+	position: absolute;
+	z-index: 1;
+	right: 0;
+	bottom: 0;
+
+	display: grid;
+	overflow: hidden;
+
+	width: 30%;
+	height: fit-content;
+
+	opacity: 0.9;
+}
+
+.img {
+	width: 100%;
+	height: fit-content;
+	object-fit: cover;
+	object-position: center;
+
+	user-select: none;
 }
 
 @media (max-width: 1024px) {
 	.letterMinimal {
 		width: calc(100% - 120px);
 	}
+
+	.imageBlock {
+		width: 50%;
+	}
 }
 
 @media (max-width: 580px) {
 	.letterMinimal {
 		width: calc(100% - 40px);
+	}
+
+	.imageBlock {
+		width: 70%;
 	}
 }

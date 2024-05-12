@@ -6,26 +6,50 @@
 }
 
 .minimalAgendaItem > h1 {
-	font-family: 'Michroma', sans-serif !important;
+	font-family: var(--fontMinimal2) !important;
 	font-weight: 600 !important;
+}
+
+.romanceAgendaItem > h1 {
+	font-family: var(--fontRomance2) !important;
+	font-weight: 600 !important;
+}
+
+.photoAgendaItem > h1 {
+	font-family: var(--fontPhoto2) !important;
+	font-weight: 400 !important;
 }
 
 .agendaTextDIv {
 	display: grid;
 	justify-items: left;
+}
 
-	margin-top: 12px;
+.minimalAgendaItem > .agendaTextDIv {
+	margin-top: 10px;
 }
 
 .title {
 	text-transform: uppercase;
+}
 
-	font-family: 'Poiret One', sans-serif;
+.minimalAgendaItem > .title {
+	font-family: var(--fontMinimal1);
 	font-weight: 600;
 }
 
+.romanceAgendaItem > .title {
+	font-family: var(--fontRomance1);
+	font-weight: 600;
+}
+
+.photoAgendaItem > .title {
+	font-family: var(--fontPhotol1);
+	font-weight: 400;
+}
+
 .description {
-	font-family: 'Bad Script', sans-serif !important;
+	font-family: var(--fontCommon) !important;
 }
 
 @media (max-width: 580px) {

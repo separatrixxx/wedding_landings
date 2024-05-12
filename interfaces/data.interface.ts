@@ -13,6 +13,8 @@ export interface DataInterface {
     dressCodeText: string,
     agenda: AgendaInterface[],
     howToGet: HowToGetInterface[],
+    blocks: BlocksInterface,
+    photos?: string[],
 }
 
 export interface QuestionInterface {
@@ -43,4 +45,13 @@ export interface AgendaInterface {
 export interface HowToGetInterface {
     title: string,
     text: string,
+}
+
+export interface BlocksInterface {
+    timer: boolean,
+    questions: boolean,
+    dressCode: boolean,
+    agenda: boolean,
+    message: boolean,
+    howToGet: boolean,
 }

@@ -22,7 +22,7 @@
 }
 
 .answerBlock > h1 {
-	font-family: 'Bad Script', sans-serif !important;
+	font-family: var(--fontCommon) !important;
 }
 
 .answerBlock > input {
@@ -31,7 +31,7 @@
 
 	border-radius: 10px;
 
-	font-family: 'Bad Script', sans-serif;
+	font-family: var(--fontCommon);
 }
 
 .inputDiv {

@@ -2,6 +2,6 @@ import { ToastSuccess } from "../components/Common/Toast/Toast";
 import { setLocale } from "./locale.helper";
 
 
-export function confirmPresence(router: any) {
+export function confirmPresence(name: string, router: any) {
     ToastSuccess(setLocale(router.locale).presence_confirmed);
 }

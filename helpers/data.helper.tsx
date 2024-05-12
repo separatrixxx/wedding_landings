@@ -89,6 +89,14 @@ export function getData(dispatch: any, theme: '' | 'minimal' | 'romance' | 'phot
                 text: "Bla bla bla bla bla\nBlablablablablablablabalbalbalablablabalbalablabalbalab",
             },
         ],
+        blocks: {
+            timer: true,
+            questions: true,
+            dressCode: true,
+            agenda: true,
+            message: true,
+            howToGet: true,
+        },
     };
 
     dispatch(setData(data));

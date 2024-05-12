@@ -1,26 +1,30 @@
 .mapBlock {
 	display: grid;
 
-	width: 100%;
-	justify-items: center;
+	width: calc(100% - 160px);
 	padding: 40px 80px;
 	gap: 20px;
+	justify-items: left;
 }
 
 .mapBlock > h1 {
 	color: var(--textDark);
 }
 
-.mapMinimal {
-	width: calc(100% - 160px);
-	justify-items: left;
-
-	background: var(--light);
+.mapMinimal > h1 {
+	font-family: var(--fontMinimal1);
+	font-weight: 600;
 }
 
-.mapMinimal > h1 {
-	font-family: 'Poiret One', sans-serif;
+.mapRomance > h1 {
+	font-family: var(--fontRomance1);
 	font-weight: 600;
+	justify-self: center;
+}
+
+.mapPhoto > h1 {
+	font-family: var(--fontPhoto1);
+	font-weight: 400;
 }
 
 .mapDiv {
@@ -35,7 +39,7 @@
 
 	outline: none;
 
-	font-family: 'Bad Script', sans-serif;
+	font-family: var(--fontCommon);
 	font-weight: 400;
 }
 
