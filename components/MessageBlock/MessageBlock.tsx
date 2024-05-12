@@ -6,8 +6,9 @@ import { setLocale } from '../../helpers/locale.helper';
 import { Button } from '../Common/Button/Button';
 import { Htag } from '../Common/Htag/Htag';
 import { useState } from 'react';
-import cn from 'classnames';
 import { sendMessage } from '../../helpers/message.helper';
+import Image from 'next/image';
+import cn from 'classnames';
 
 
 export const MessageBlock = (): JSX.Element => {
@@ -32,6 +33,21 @@ export const MessageBlock = (): JSX.Element => {
                 aria-label='message' />
             <Button text={setLocale(router.locale).send} type={data.theme} subtype='light'
                 onClick={() => sendMessage(message, setMessage, router)} />
+            {
+                data.theme === 'romance' ?
+                    <div className={styles.imageBlock}>
+                        <Image className={styles.img} draggable='false'
+                            loader={() => '/romanceImg3.webp'}
+                            src='/romanceImg3.webp'
+                            alt='romance3 img'
+                            width={1}
+                            height={1}
+                            priority={true}
+                            unoptimized={true}
+                        />
+                    </div>
+                : <></>
+            }
         </div>
     );
 };

@@ -1,11 +1,20 @@
 .messageBlock {
+	position: relative;
+
 	display: grid;
+	overflow: hidden;
 
 	width: calc(100% - 160px);
 
 	padding: 40px 80px;
 	gap: 20px;
 	justify-items: left;
+}
+
+.messageBlock > h1,
+.messageBlock > textarea,
+.messageBlock > button {
+	z-index: 2;
 }
 
 .messageBlock > h1 {
@@ -51,6 +60,30 @@
 
 	font-family: var(--fontCommon);
 	font-weight: 400;
+}
+
+.imageBlock {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+
+	display: grid;
+	overflow: hidden;
+
+	width: 100%;
+	height: fit-content;
+
+	opacity: 0.5;
+}
+
+.img {
+	width: 100%;
+	height: fit-content;
+	object-fit: cover;
+	object-position: center;
+
+	user-select: none;
 }
 
 @media (max-width: 1024px) {
