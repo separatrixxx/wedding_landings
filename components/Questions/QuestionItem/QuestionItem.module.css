@@ -4,8 +4,18 @@
 }
 
 .minimalQuestionItem > h1 {
-	font-family: 'Poiret One', sans-serif;
+	font-family: var(--fontMinimal1);
 	font-weight: 600;
+}
+
+.romanceQuestionItem > h1 {
+	font-family: var(--fontRomance1);
+	font-weight: 600;
+}
+
+.photoQuestionItem > h1 {
+	font-family: var(--fontPhoto1);
+	font-weight: 400;
 }
 
 .questionText {

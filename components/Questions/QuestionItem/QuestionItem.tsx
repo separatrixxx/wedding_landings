@@ -55,7 +55,11 @@ export const QuestionItem = ({ question, type, setAnswers }: QuestionItemProps):
     };
 
     return (
-        <div className={cn(styles.questionItem, { [styles.minimalQuestionItem]: type === 'minimal' })}>
+        <div className={cn(styles.questionItem, {
+            [styles.minimalQuestionItem]: type === 'minimal',
+            [styles.romanceQuestionItem]: type === 'romance',
+            [styles.photoQuestionItem]: type === 'photo',
+        })}>
             <Htag tag='m' className={styles.questionText}>
                 {question.question}
             </Htag>
