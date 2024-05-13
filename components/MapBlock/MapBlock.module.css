@@ -2,7 +2,7 @@
 	display: grid;
 
 	width: calc(100% - 160px);
-	padding: 40px 80px;
+	padding: 40px 0;
 	gap: 20px;
 	justify-items: left;
 }
@@ -46,7 +46,6 @@
 @media (max-width: 1024px) {
 	.mapBlock {
 		width: calc(100% - 120px);
-		padding: 40px 60px;
 	}
 
 	.mapDiv {
@@ -56,8 +55,7 @@
 
 @media (max-width: 580px) {
 	.mapBlock {
-		width: calc(100% - 80px);
-		padding: 40px;
+		width: calc(100% - 40px);
 	}
 
 	.mapDiv {
@@ -66,8 +64,7 @@
 }
 
 @media (max-width: 300px) {
-	.mapBlock {
-		width: calc(100% - 40px);
-		padding: 40px 20px;
+	.mapDiv {
+		height: 100px;
 	}
 }

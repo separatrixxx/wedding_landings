@@ -114,11 +114,38 @@
 		gap: 20px;
 	}
 
+	.modalBody {
+		width: 250px;
+		height: 70px;
+
+		border-radius: 10px;
+	}
+
+	.modalBody > input {
+		height: 20px;
+		padding: 1px 5px;
+
+		border-radius: 5px;
+	}
+
 	.imageBlock {
 		width: 80%;
 	}
 
 	.imageBlockPhoto {
 		width: 55%;
+	}
+}
+
+@media (max-width: 300px) {
+	.modalBody {
+		width: 200px;
+		height: 50px;
+	}
+}
+
+@media (max-width: 200px) {
+	.modalBody {
+		width: 100%;
 	}
 }
