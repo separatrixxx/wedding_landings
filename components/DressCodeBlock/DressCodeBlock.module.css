@@ -98,7 +98,7 @@
 }
 
 @media (max-width: 1024px) {
-	.dressCodeMinimal {
+	.dressCodeBlock {
 		width: calc(100% - 120px);
 		padding: 30px 60px;
 	}
@@ -113,8 +113,24 @@
 	}
 }
 
+@media (max-width: 700px) {
+	.dressCodeBlock {
+		width: calc(100% - 80px);
+		padding: 30px 40px;
+	}
+
+	.dressCodeColorsDiv {
+		gap: 25px;
+	}
+
+	.dressCodeColor {
+		width: 70px;
+		height: 70px;
+	}
+}
+
 @media (max-width: 580px) {
-	.dressCodeMinimal {
+	.dressCodeBlock {
 		width: calc(100% - 40px);
 		padding: 30px 20px;
 	}
