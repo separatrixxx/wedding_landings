@@ -70,21 +70,21 @@
 }
 
 @media (max-width: 1024px) {
-	.letterMinimal {
+	.letterBlock {
 		width: calc(100% - 120px);
 	}
 
 	.imageBlock {
-		width: 50%;
+		width: 40%;
 	}
 }
 
 @media (max-width: 580px) {
-	.letterMinimal {
+	.letterBlock {
 		width: calc(100% - 40px);
 	}
 
 	.imageBlock {
-		width: 70%;
+		width: 45%;
 	}
 }

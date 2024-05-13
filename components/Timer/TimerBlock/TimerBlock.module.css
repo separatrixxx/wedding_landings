@@ -19,3 +19,9 @@
 .photoTimerBlock {
 	background: var(--primaryPhoto);
 }
+
+@media (max-width: 580px) {
+	.timerBlock {
+		padding-bottom: 10px;
+	}
+}
