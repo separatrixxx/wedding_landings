@@ -6,6 +6,7 @@ import { setLocale } from '../../../helpers/locale.helper';
 import { useRouter } from 'next/router';
 import { MinimalMainBlock } from '../MinimalMainBlock/MinimalMainBlock';
 import { addDateToCalendar } from '../../../helpers/calendar.helper';
+import { RomanceMainBlock } from '../RomanceMainBlock/RomanceMainBlock';
 
 
 export const MainBlock = (): JSX.Element => {
@@ -19,6 +20,8 @@ export const MainBlock = (): JSX.Element => {
             {
                 data.theme === 'minimal' ?
                     <MinimalMainBlock /> :
+                data.theme === 'romance' ?
+                    <RomanceMainBlock /> :
                 <></>
             }
         </div>

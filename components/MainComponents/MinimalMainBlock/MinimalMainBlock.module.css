@@ -108,9 +108,25 @@
 	}
 }
 
+@media (max-width: 800px) {
+	.dataBlock > h1 {
+		max-width: 200px;
+	}
+}
+
+@media (max-width: 700px) {
+	.dataBlock > h1 {
+		max-width: 150px;
+	}
+}
+
 @media (max-width: 580px) {
 	.dataBlock {
 		margin-left: 20px;
+	}
+
+	.dataBlock > h1 {
+		max-width: 120px;
 	}
 
 	.namesBlock {
@@ -129,6 +145,12 @@
 
 	.imageBlock {
 		width: 40%;
+	}
+}
+
+@media (max-width: 400px) {
+	.dataBlock > h1 {
+		max-width: 100px;
 	}
 }
 

@@ -4,7 +4,7 @@ import { AppState } from '../../../features/store/store';
 import { setLocale } from '../../../helpers/locale.helper';
 import { useRouter } from 'next/router';
 import { Htag } from '../../Common/Htag/Htag';
-import { formatDate } from '../../../helpers/format.helper';
+import { formatDateMinimal } from '../../../helpers/format.helper';
 import Image from 'next/image';
 
 
@@ -19,7 +19,7 @@ export const MinimalMainBlock = (): JSX.Element => {
                     {setLocale(router.locale).join_us}
                 </Htag>
                 <Htag tag='xxl' className={styles.date}>
-                    {formatDate(data.date)}
+                    {formatDateMinimal(data.date)}
                 </Htag>
                 <Htag tag='l' className={styles.boldText}>
                     {setLocale(router.locale).as_we_say}

@@ -1,0 +1,166 @@
+.romanceMainBlock {
+	position: relative;
+
+	display: grid;
+	overflow: hidden;
+
+	width: 100%;
+	margin: 40px 0 0 0;
+}
+
+.infoDiv {
+	z-index: 2;
+
+	display: grid;
+
+	margin: 100px 0 100px 10%;
+}
+
+.infoDiv2 {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 100px;
+}
+
+.infoDiv2 > div {
+	display: grid;
+}
+
+.infoDiv > h1,
+.location {
+	font-family: var(--fontCommon);
+	font-weight: 500;
+}
+
+.timeDiv {
+	height: fit-content;
+	gap: 5px;
+
+	margin-top: 60px;
+}
+
+.names {
+	display: grid;
+	align-items: center;
+
+	font-family: var(--fontRomance1) !important;
+	font-weight: 400 !important;
+	grid-template-columns: auto auto 1fr;
+	gap: 10px;
+}
+
+.and {
+	font-family: var(--fontRomance3) !important;
+	font-size: 120px;
+	font-weight: 400 !important;
+}
+
+.date,
+.time {
+	font-family: var(--fontRomance2) !important;
+	font-weight: 400 !important;
+}
+
+.date {
+	margin-top: -40px;
+}
+
+.imageBlock {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+
+	display: grid;
+	overflow: hidden;
+
+	width: 100%;
+	height: fit-content;
+
+	opacity: 0.5;
+}
+
+.img {
+	width: 100%;
+	height: fit-content;
+	object-fit: cover;
+	object-position: center;
+
+	user-select: none;
+}
+
+@media (max-width: 1024px) {
+	.infoDiv {
+		margin: 50px 0 50px 7%;
+	}
+
+	.infoDiv2 {
+		gap: 50px;
+	}
+
+	.timeDiv {
+		margin-top: 55px;
+	}
+
+	.and {
+		font-size: 90px;
+	}
+}
+
+@media (max-width: 700px) {
+	.infoDiv {
+		margin: 30px 0 30px 7%;
+	}
+
+	.infoDiv2 {
+		grid-template-columns: auto;
+		gap: 10px;
+	}
+
+	.date {
+		margin-top: -20px;
+	}
+
+	.timeDiv {
+		align-items: center;
+
+		margin-top: 0;
+		grid-template-columns: auto auto 1fr;
+		gap: 20px;
+	}
+}
+
+@media (max-width: 580px) {
+	.romanceMainBlock {
+		margin: 20px 0 0 0;
+	}
+
+	.names {
+		gap: 5px;
+	}
+
+	.date {
+		margin-top: -10px;
+	}
+
+	.and {
+		font-size: 65px;
+	}
+}
+
+@media (max-width: 450px) {
+	.infoDiv {
+		margin: 0 0 30px 7%;
+	}
+}
+
+@media (max-width: 400px) {
+	.infoDiv {
+		margin: 0 0 30px 3%;
+	}
+
+	.imageBlock {
+		top: auto !important;
+		bottom: 0 !important;
+	}
+}

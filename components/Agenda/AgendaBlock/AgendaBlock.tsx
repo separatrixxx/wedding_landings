@@ -29,8 +29,8 @@ export const AgendaBlock = (): JSX.Element => {
             </Htag>
             <div className={styles.agendaList}>
                 {
-                    data.agenda.map(a => (
-                        <AgendaItem key={a.title} agenda={a} type={data.theme} />
+                    data.agenda.map((a, i) => (
+                        <AgendaItem key={a.title} agenda={a} type={data.theme} isRight={data.theme === 'romance' && i % 2 !== 0 ? true : false} />
                     ))
                 }
             </div>
@@ -47,6 +47,53 @@ export const AgendaBlock = (): JSX.Element => {
                             unoptimized={true}
                         />
                     </div>
+                : data.theme === 'romance' ?
+                    <>
+                        <div className={cn(styles.imageBlock, styles.cloverImg)}>
+                            <Image className={styles.img} draggable='false'
+                                loader={() => '/cloverImg.webp'}
+                                src='/cloverImg.webp'
+                                alt='clover img'
+                                width={1}
+                                height={1}
+                                priority={true}
+                                unoptimized={true}
+                            />
+                        </div>
+                        <div className={cn(styles.imageBlock, styles.shamrockImg)}>
+                            <Image className={styles.img} draggable='false'
+                                loader={() => '/shamrockImg.webp'}
+                                src='/shamrockImg.webp'
+                                alt='shamrock img'
+                                width={1}
+                                height={1}
+                                priority={true}
+                                unoptimized={true}
+                            />
+                        </div>
+                        <div className={cn(styles.imageBlock, styles.ladybugImg)}>
+                            <Image className={styles.img} draggable='false'
+                                loader={() => '/ladybugImg.webp'}
+                                src='/ladybugImg.webp'
+                                alt='ladybug img'
+                                width={1}
+                                height={1}
+                                priority={true}
+                                unoptimized={true}
+                            />
+                        </div>
+                        <div className={cn(styles.imageBlock, styles.bumblebeeImg)}>
+                            <Image className={styles.img} draggable='false'
+                                loader={() => '/bumblebeeImg.webp'}
+                                src='/bumblebeeImg.webp'
+                                alt='bumblebee img'
+                                width={1}
+                                height={1}
+                                priority={true}
+                                unoptimized={true}
+                            />
+                        </div>
+                    </>
                 : <></>
             }
         </div>

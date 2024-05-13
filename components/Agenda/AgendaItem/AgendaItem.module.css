@@ -3,6 +3,7 @@
 	align-items: center;
 	grid-template-columns: auto 1fr;
 	gap: 40px;
+	justify-self: left;
 }
 
 .minimalAgendaItem > h1 {
@@ -50,6 +51,16 @@
 
 .description {
 	font-family: var(--fontCommon) !important;
+}
+
+.itemRight {
+	grid-template-areas: "agendaTextDIv .";
+	justify-self: right;
+}
+
+.itemRight > .agendaTextDIv {
+	justify-items: right;
+	grid-area: agendaTextDIv;
 }
 
 @media (max-width: 580px) {

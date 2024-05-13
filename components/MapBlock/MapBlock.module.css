@@ -8,6 +8,15 @@
 }
 
 .mapBlock > h1 {
+	position: relative;
+	z-index: 2;
+
+	overflow: hidden;
+
+	padding: 30px 150px;
+
+	text-align: center;
+
 	color: var(--textDark);
 }
 
@@ -29,6 +38,7 @@
 
 .mapDiv {
 	position: relative;
+	z-index: 2;
 
 	overflow: hidden;
 
@@ -43,19 +53,67 @@
 	font-weight: 400;
 }
 
+.imageBlock {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+
+	display: grid;
+	overflow: hidden;
+
+	width: 12%;
+	height: auto;
+
+	opacity: 1;
+}
+
+.imageBlock1 {
+	left: 0;
+
+	transform: rotate(20deg);
+}
+
+.imageBlock2 {
+	right: 0;
+
+	transform: rotate(-25deg);
+}
+
+.img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	object-position: center;
+
+	user-select: none;
+}
+
 @media (max-width: 1024px) {
 	.mapBlock {
 		width: calc(100% - 120px);
 	}
 
+	.mapBlock > h1 {
+		padding: 20px 70px;
+	}
+
 	.mapDiv {
 		height: 300px;
+	}
+
+	.imageBlock {
+		width: 10%;
+		margin-top: 10px;
 	}
 }
 
 @media (max-width: 580px) {
 	.mapBlock {
 		width: calc(100% - 40px);
+	}
+
+	.mapBlock > h1 {
+		padding: 20px 50px;
 	}
 
 	.mapDiv {

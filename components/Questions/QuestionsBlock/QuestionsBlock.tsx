@@ -64,7 +64,7 @@ export const QuestionsBlock = (): JSX.Element => {
                             />
                         </div>
                     : data.theme === 'romance' ?
-                        <div className={cn(styles.imageBlock, styles.imageBlockPhoto)}>
+                        <div className={cn(styles.imageBlock, styles.imageBlockRomance)}>
                             <Image className={styles.img} draggable='false'
                                 loader={() => '/flowerImg5.webp'}
                                 src='/flowerImg5.webp'

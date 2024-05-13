@@ -45,7 +45,7 @@ export function getData(dispatch: any, theme: '' | 'minimal' | 'romance' | 'phot
         agenda: [
             {
                 time: "14:00",
-                title: "WELCOME DRINL",
+                title: "WELCOME DRINK",
                 description: "we want you to start this day with a glass of champagne",
             },
             {

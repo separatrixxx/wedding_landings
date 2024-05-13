@@ -5,13 +5,13 @@ import cn from 'classnames';
 
 
 
-export const AgendaItem = ({ agenda, type }: AgendaItemProps): JSX.Element => {
+export const AgendaItem = ({ agenda, type, isRight }: AgendaItemProps): JSX.Element => {
     return (
         <div className={cn(styles.agendaItem, {
             [styles.minimalAgendaItem]: type === 'minimal',
             [styles.romanceAgendaItem]: type === 'romance',
             [styles.photoAgendaItem]: type === 'photo',
-
+            [styles.itemRight]: isRight,
         })}>
             <Htag tag='xxl'>
                 {agenda.time}
