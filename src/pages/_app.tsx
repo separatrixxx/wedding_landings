@@ -21,7 +21,10 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property='og:title' content={setLocale(router.locale).wedding_landing} />
         <meta property='og:description' content={setLocale(router.locale).wedding_landing} />
         <meta charSet="utf-8" />
-        <link rel="icon" href="/logo.svg" type='image/svg+xml' />
+        <link rel="icon" href="/logo.png" type="image/png" />
+        <link rel="icon" href="/favicon-48x48.ico" sizes="48x48" type="image/x-icon" />
+        <link rel="icon" href="/favicon-144x144.ico" sizes="144x144" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/favicon-167x167.ico" type="image/x-icon" />
       </Head>
       <Component {...pageProps} />
     </Provider>

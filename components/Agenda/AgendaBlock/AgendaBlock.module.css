@@ -1,13 +1,12 @@
 .agendaBlock {
-	position: relative;
-
-	display: grid;
-	overflow: hidden;
-
-	width: calc(100% - 160px);
-	margin-top: 40px;
-	gap: 40px;
-	justify-items: left;
+    position: relative;
+    display: grid;
+    overflow: visible;
+    width: calc(100% - 160px);
+    height: 100%;
+    margin-top: 40px;
+    gap: 40px;
+    justify-items: left;
 }
 
 .agendaMinimal > h1 {
@@ -43,27 +42,23 @@
 }
 
 .imageBlock {
-	position: absolute;
-	z-index: 1;
-	right: 0;
-	bottom: 0;
-
-	display: grid;
-	overflow: hidden;
-
-	width: 30%;
-	height: fit-content;
-
-	opacity: 0.2;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    overflow: hidden;
+    width: 30%;
+    height: auto;
+    opacity: 0.2;
 }
 
 .img {
-	width: 100%;
-	height: fit-content;
-	object-fit: cover;
-	object-position: center;
-
-	user-select: none;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: bottom;
+    user-select: none;
 }
 
 @media (max-width: 1024px) {
