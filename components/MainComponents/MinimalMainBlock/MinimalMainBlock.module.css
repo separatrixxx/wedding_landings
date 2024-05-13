@@ -74,14 +74,14 @@
 	overflow: hidden;
 
 	width: 25%;
-	height: fit-content;
+	height: auto;
 
 	opacity: 0.2;
 }
 
 .img {
 	width: 100%;
-	height: fit-content;
+	height: auto;
 	object-fit: cover;
 	object-position: center;
 
