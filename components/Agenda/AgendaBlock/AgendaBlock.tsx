@@ -6,9 +6,6 @@ import { Htag } from '../../Common/Htag/Htag';
 import { setLocale } from '../../../helpers/locale.helper';
 import Image from 'next/image';
 import { AgendaItem } from '../AgendaItem/AgendaItem';
-import { useState } from 'react';
-import { AnswerInterface } from '../../../interfaces/data.interface';
-import { Button } from '../../Common/Button/Button';
 import cn from 'classnames';
 
 
@@ -16,24 +13,62 @@ export const AgendaBlock = (): JSX.Element => {
     const router = useRouter();
     const data = useSelector((state: AppState) => state.data.data);
 
-    const [answers, setAnswers] = useState<AnswerInterface[]>([]);
-
     return (
         <div className={cn(styles.agendaBlock, {
             [styles.agendaMinimal]: data.theme === 'minimal',
             [styles.agendaRomance]: data.theme === 'romance',
             [styles.agendaPhoto]: data.theme === 'photo',
         })}>
-            <Htag tag='xl'>
-                {setLocale(router.locale).wedding_agenda}
-            </Htag>
-            <div className={styles.agendaList}>
-                {
-                    data.agenda.map((a, i) => (
-                        <AgendaItem key={a.title} agenda={a} type={data.theme} isRight={data.theme === 'romance' && i % 2 !== 0 ? true : false} />
-                    ))
-                }
-            </div>
+            {
+                data.theme === 'photo' ?
+                    <div className={styles.filmBlock}>
+                        <div>
+                        {
+                            data.photos?.concat(data.photos).map(p => (
+                                <div key={p} className={styles.photoImageBlock}>
+                                    <Image className={styles.photoImg} draggable='false'
+                                        loader={() => p}
+                                        src={p}
+                                        alt='photo img'
+                                        width={1}
+                                        height={1}
+                                        priority={true}
+                                        unoptimized={true}
+                                    />
+                                </div>
+                            ))
+                        }
+                        </div>
+                    </div>
+                : <></>
+            }
+            {
+                data.theme === 'photo' ?
+                    <div className={styles.photoDiv}>
+                        <Htag tag='xl'>
+                            {setLocale(router.locale).wedding_agenda}
+                        </Htag>
+                        <div className={styles.agendaList}>
+                            {
+                                data.agenda.map((a, i) => (
+                                    <AgendaItem key={a.title} agenda={a} type={data.theme} isRight={data.theme === 'romance' && i % 2 !== 0 ? true : false} />
+                                ))
+                            }
+                        </div>
+                    </div>
+                : <>
+                   <Htag tag='xl'>
+                        {setLocale(router.locale).wedding_agenda}
+                    </Htag>
+                    <div className={styles.agendaList}>
+                        {
+                            data.agenda.map((a, i) => (
+                                <AgendaItem key={a.title} agenda={a} type={data.theme} isRight={data.theme === 'romance' && i % 2 !== 0 ? true : false} />
+                            ))
+                        }
+                    </div>
+                </>
+            }
             {
                 data.theme === 'minimal' ?
                     <div className={styles.imageBlock}>

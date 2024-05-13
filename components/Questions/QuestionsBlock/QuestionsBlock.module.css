@@ -25,11 +25,9 @@
 	justify-self: center;
 }
 
-.questionsPhoto > h1 {
-	z-index: 2;
-
-	font-family: var(--fontPhoto1);
-	font-weight: 400 !important;
+.questionsPhoto {
+	grid-template-columns: 1fr 40%;
+	gap: 40px;
 }
 
 .questionsList {
@@ -38,6 +36,17 @@
 	display: grid;
 
 	gap: 20px;
+}
+
+.photoDiv > .questionsList {
+	margin-top: 40px;
+}
+
+.questionsPhoto > .photoDiv > h1 {
+	z-index: 2;
+
+	font-family: var(--fontPhoto1);
+	font-weight: 400 !important;
 }
 
 .modalBody {
@@ -92,6 +101,33 @@
 	object-position: center;
 
 	user-select: none;
+}
+
+.filmBlock {
+	display: grid;
+	overflow: hidden;
+
+	width: fit-content;
+	height: fit-content;
+	margin-top: 100px;
+	padding: 5% 4%;
+
+	background: black;
+	background-image: url('/frameImg.webp');
+	background-repeat: no-repeat;
+	background-position: top;
+	background-size: cover;
+
+	justify-items: center;
+	gap: 10px;
+}
+
+.photoImg {
+	width: 100%;
+	height: fit-content;
+
+	user-select: none;
+	filter: brightness(0.8);
 }
 
 @media (max-width: 1024px) {

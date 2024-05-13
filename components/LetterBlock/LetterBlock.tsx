@@ -18,12 +18,48 @@ export const LetterBlock = (): JSX.Element => {
             [styles.letterRomance]: data.theme === 'romance',
             [styles.letterPhoto]: data.theme === 'photo',
         })}>
-            <Htag tag='xl'>
-                {setLocale(router.locale).letter_from_couple}
-            </Htag>
-            <Htag tag='m' className={styles.letter}>
-                {data.letter}
-            </Htag>
+            {
+                data.theme === 'photo' ?
+                    <div className={styles.filmBlock}>
+                        <div>
+                        {
+                            data.photos?.concat(data.photos).map(p => (
+                                <div key={p} className={styles.photoImageBlock}>
+                                    <Image className={styles.photoImg} draggable='false'
+                                        loader={() => p}
+                                        src={p}
+                                        alt='photo img'
+                                        width={1}
+                                        height={1}
+                                        priority={true}
+                                        unoptimized={true}
+                                    />
+                                </div>
+                            ))
+                        }
+                        </div>
+                    </div>
+                : <></>
+            }
+            {
+                data.theme === 'photo' ?
+                    <div className={styles.photoDiv}>
+                        <Htag tag='xl'>
+                            {setLocale(router.locale).letter_from_couple}
+                        </Htag>
+                        <Htag tag='m' className={styles.letter}>
+                            {data.letter}
+                        </Htag>
+                    </div>
+                : <>
+                    <Htag tag='xl'>
+                        {setLocale(router.locale).letter_from_couple}
+                    </Htag>
+                    <Htag tag='m' className={styles.letter}>
+                        {data.letter}
+                    </Htag>
+                </>
+            }
             {
                 data.theme === 'romance' ?
                     <div className={styles.imageBlock}>

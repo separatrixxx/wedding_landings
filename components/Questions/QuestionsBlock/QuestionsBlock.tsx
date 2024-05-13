@@ -38,18 +38,52 @@ export const QuestionsBlock = (): JSX.Element => {
                 [styles.questionsRomance]: data.theme === 'romance',
                 [styles.questionsPhoto]: data.theme === 'photo',
             })}>
-                <Htag tag='xl'>
-                    {setLocale(router.locale).questions_for_you}
-                </Htag>
-                <div className={cn(styles.questionsList)}>
-                    {
-                        data.questions.map(q => (
-                            <QuestionItem key={q.question} question={q} type={data.theme} setAnswers={setAnswers} />
-                        ))
-                    }
-                </div>
-                <Button text={setLocale(router.locale).send} type={data.theme} subtype='dark'
-                    onClick={() => setActive(true)} />
+                {
+                    data.theme === 'photo' ?
+                        <div className={styles.photoDiv}>
+                            <Htag tag='xl'>
+                                {setLocale(router.locale).questions_for_you}
+                            </Htag>
+                            <div className={styles.questionsList}>
+                                {
+                                    data.questions.map(q => (
+                                        <QuestionItem key={q.question} question={q} type={data.theme} setAnswers={setAnswers} />
+                                    ))
+                                }
+                            </div>
+                            <Button text={setLocale(router.locale).send} type={data.theme} subtype='dark'
+                                onClick={() => setActive(true)} />
+                        </div>
+                    : <>
+                        <Htag tag='xl'>
+                            {setLocale(router.locale).questions_for_you}
+                        </Htag>
+                        <div className={styles.questionsList}>
+                            {
+                                data.questions.map(q => (
+                                    <QuestionItem key={q.question} question={q} type={data.theme} setAnswers={setAnswers} />
+                                ))
+                            }
+                        </div>
+                        <Button text={setLocale(router.locale).send} type={data.theme} subtype='dark'
+                            onClick={() => setActive(true)} />
+                    </>
+                }
+                {
+                data.theme === 'photo' ?
+                    <div className={styles.filmBlock}>
+                        <Image className={styles.photoImg} draggable='false'
+                            loader={() => data.photos ? data.photos[3] : ''}
+                            src={data.photos ? data.photos[3] : ''}
+                            alt='photo3 img'
+                            width={1}
+                            height={1}
+                            priority={true}
+                            unoptimized={true}
+                        />
+                    </div>
+                : <></>
+            }
                 {
                     data.theme === 'minimal' ?
                         <div className={styles.imageBlock}>

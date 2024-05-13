@@ -16,17 +16,28 @@
 	font-weight: 600 !important;
 }
 
-.photoAgendaItem > h1 {
-	font-family: var(--fontPhoto2) !important;
-	font-weight: 400 !important;
+.photoAgendaItem {
+	grid-template-columns: auto;
+	gap: 10px;
+	justify-items: center;
+	justify-self: center;
 }
 
-.agendaTextDIv {
+.agendaTextDiv {
 	display: grid;
 	justify-items: left;
 }
 
-.minimalAgendaItem > .agendaTextDIv {
+.photoAgendaItem > .agendaTextDiv {
+	justify-items: center;
+}
+
+.photoAgendaItem > h1 {
+	font-family: var(--fontPhoto2) !important;
+	font-weight: 600 !important;
+}
+
+.minimalAgendaItem > .agendaTextDiv {
 	margin-top: 10px;
 }
 
@@ -34,19 +45,19 @@
 	text-transform: uppercase;
 }
 
-.minimalAgendaItem > .title {
+.minimalAgendaItem > .agendaTextDiv > .title {
 	font-family: var(--fontMinimal1);
 	font-weight: 600;
 }
 
-.romanceAgendaItem > .title {
+.romanceAgendaItem > .agendaTextDiv > .title {
 	font-family: var(--fontRomance1);
 	font-weight: 600;
 }
 
-.photoAgendaItem > .title {
-	font-family: var(--fontPhotol1);
-	font-weight: 400;
+.photoAgendaItem > .agendaTextDiv > .title {
+	font-family: var(--fontPhoto1) !important;
+	font-weight: 400 !important;
 }
 
 .description {
@@ -54,13 +65,13 @@
 }
 
 .itemRight {
-	grid-template-areas: "agendaTextDIv .";
+	grid-template-areas: "agendaTextDiv .";
 	justify-self: right;
 }
 
-.itemRight > .agendaTextDIv {
+.itemRight > .agendaTextDiv {
 	justify-items: right;
-	grid-area: agendaTextDIv;
+	grid-area: agendaTextDiv;
 }
 
 @media (max-width: 580px) {

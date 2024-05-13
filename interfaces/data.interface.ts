@@ -14,6 +14,7 @@ export interface DataInterface {
     agenda: AgendaInterface[],
     howToGet: HowToGetInterface[],
     blocks: BlocksInterface,
+    photoMain?: string,
     photos?: string[],
 }
 

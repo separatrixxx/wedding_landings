@@ -16,7 +16,7 @@ export const AgendaItem = ({ agenda, type, isRight }: AgendaItemProps): JSX.Elem
             <Htag tag='xxl'>
                 {agenda.time}
             </Htag>
-            <div className={styles.agendaTextDIv}>
+            <div className={styles.agendaTextDiv}>
                 <Htag tag='m' className={styles.title}>
                     {agenda.title}
                 </Htag>

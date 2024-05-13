@@ -7,6 +7,10 @@ import { useRouter } from 'next/router';
 import { MinimalMainBlock } from '../MinimalMainBlock/MinimalMainBlock';
 import { addDateToCalendar } from '../../../helpers/calendar.helper';
 import { RomanceMainBlock } from '../RomanceMainBlock/RomanceMainBlock';
+import { Htag } from '../../Common/Htag/Htag';
+import { formatDateRomance } from '../../../helpers/format.helper';
+import Image from 'next/image';
+import cn from 'classnames';
 
 
 export const MainBlock = (): JSX.Element => {
@@ -14,7 +18,9 @@ export const MainBlock = (): JSX.Element => {
     const data = useSelector((state: AppState) => state.data.data);
 
     return (
-        <div className={styles.mainBlock}>
+        <div className={cn(styles.mainBlock, {
+            [styles.photoMainBlock]: data.theme === 'photo',
+        })}>
             <Button type={data.theme} subtype='dark' text={setLocale(router.locale).add_to_calendar} isMain={true}
                 onClick={() => addDateToCalendar(data, router)}/>
             {
@@ -22,7 +28,42 @@ export const MainBlock = (): JSX.Element => {
                     <MinimalMainBlock /> :
                 data.theme === 'romance' ?
                     <RomanceMainBlock /> :
-                <></>
+                <>
+                    <div className={styles.photoInfoDiv}>
+                        <Htag tag='xxxl' className={styles.names}>
+                            {data.brideName} <span className={styles.and}>&</span> {data.groomName}
+                        </Htag>
+                        <div className={styles.photoInfoDiv2}>
+                            <div className={styles.dateTimeDiv}>
+                                <Htag tag='l'>
+                                    {formatDateRomance(data.date)}
+                                </Htag>
+                                <Htag tag='l'>
+                                    {data.time}
+                                </Htag>
+                            </div>
+                            <div>
+                                <Htag tag='m'>
+                                    {data.location}
+                                </Htag>
+                                <Htag tag='m'>
+                                    {data.restourant}
+                                </Htag>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.imageBlock}>
+                        <Image className={styles.img} draggable='false'
+                            loader={() => data.photoMain ? data.photoMain : ''}
+                            src={data.photoMain ? data.photoMain : ''}
+                            alt='photoMain img'
+                            width={1}
+                            height={1}
+                            priority={true}
+                            unoptimized={true}
+                        />
+                    </div>
+                </>
             }
         </div>
     );

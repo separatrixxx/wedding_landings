@@ -5,3 +5,151 @@
 	height: fit-content;
 	justify-items: center;
 }
+
+.photoMainBlock {
+	position: relative;
+
+	overflow: hidden;
+
+	height: 700px;
+}
+
+.photoInfoDiv {
+	position: absolute;
+	z-index: 2;
+	bottom: 0;
+	left: 0;
+
+	display: grid;
+
+	width: 100%;
+	height: fit-content;
+	padding-bottom: 10%;
+	justify-items: center;
+	gap: 30%;
+}
+
+.dateTimeDiv > h1 {
+	font-family: var(--fontPhoto2) !important;
+	font-weight: 400 !important;
+}
+
+.photoInfoDiv > h1,
+.photoInfoDiv2 > div > h1 {
+	color: var(--textLight);
+}
+
+.names {
+	display: grid;
+	align-items: center;
+
+	font-family: var(--fontPhoto1) !important;
+	font-weight: 600 !important;
+	grid-template-columns: auto auto 1fr;
+	gap: 10px;
+}
+
+.and {
+	font-family: var(--fontPhoto1) !important;
+	font-size: 120px;
+	font-weight: 200 !important;
+}
+
+.photoInfoDiv2 {
+	display: grid;
+
+	width: 100%;
+	grid-template-columns: 50% 50%;
+	justify-items: center;
+}
+
+.photoInfoDiv2 > div {
+	display: grid;
+
+	height: fit-content;
+	justify-items: left;
+}
+
+.photoInfoDiv2 > div > h1 {
+	font-family: var(--fontPhoto1) !important;
+	font-weight: 400 !important;
+}
+
+.imageBlock {
+	position: absolute;
+	z-index: 1;
+	top: -30%;
+	right: 0;
+
+	display: grid;
+	overflow: hidden;
+
+	width: 100%;
+	height: fit-content;
+}
+
+.img {
+	width: 100%;
+	height: fit-content;
+	object-fit: cover;
+	object-position: center;
+
+	user-select: none;
+	filter: brightness(0.8);
+}
+
+@media (max-width: 1024px) {
+	.photoMainBlock {
+		height: 500px;
+	}
+
+	.and {
+		font-size: 90px;
+	}
+}
+
+@media (max-width: 700px) {
+	.photoMainBlock {
+		height: 300px;
+	}
+
+	.photoInfoDiv {
+		gap: 10%;
+
+		padding-bottom: 5%;
+	}
+}
+
+@media (max-width: 580px) {
+	.names {
+		gap: 5px;
+	}
+
+	.and {
+		font-size: 65px;
+	}
+}
+
+@media (max-width: 400px) {
+	.photoMainBlock {
+		height: 200px;
+	}
+
+	.photoInfoDiv {
+		gap: 10%;
+
+		padding-bottom: 5%;
+	}
+}
+
+@media (max-width: 300px) {
+	.photoMainBlock {
+		height: 200px;
+	}
+
+	.photoInfoDiv {
+		gap: 0;
+
+		padding-bottom: 3%;
+	}
+}
