@@ -78,7 +78,7 @@
 .imageBlock {
 	position: absolute;
 	z-index: 1;
-	top: -30%;
+	top: 0;
 	right: 0;
 
 	display: grid;

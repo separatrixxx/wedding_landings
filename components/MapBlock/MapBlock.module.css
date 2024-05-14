@@ -13,8 +13,6 @@
 
 	overflow: hidden;
 
-	padding: 30px 150px;
-
 	text-align: center;
 
 	color: var(--textDark);
@@ -29,6 +27,7 @@
 	font-family: var(--fontRomance1);
 	font-weight: 600;
 	justify-self: center;
+	padding: 30px 150px;
 }
 
 .mapPhoto > h1 {
@@ -93,7 +92,7 @@
 		width: calc(100% - 120px);
 	}
 
-	.mapBlock > h1 {
+	.mapRomance > h1 {
 		padding: 20px 70px;
 	}
 
@@ -112,7 +111,7 @@
 		width: calc(100% - 40px);
 	}
 
-	.mapBlock > h1 {
+	.mapRomance > h1 {
 		padding: 20px 50px;
 	}
 
