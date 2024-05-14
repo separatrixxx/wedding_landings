@@ -70,21 +70,6 @@ export const QuestionsBlock = (): JSX.Element => {
                     </>
                 }
                 {
-                data.theme === 'photo' ?
-                    <div className={styles.filmBlock}>
-                        <Image className={styles.photoImg} draggable='false'
-                            loader={() => data.photos ? data.photos[3] : ''}
-                            src={data.photos ? data.photos[3] : ''}
-                            alt='photo3 img'
-                            width={1}
-                            height={1}
-                            priority={true}
-                            unoptimized={true}
-                        />
-                    </div>
-                : <></>
-            }
-                {
                     data.theme === 'minimal' ?
                         <div className={styles.imageBlock}>
                             <Image className={styles.img} draggable='false'
@@ -109,7 +94,17 @@ export const QuestionsBlock = (): JSX.Element => {
                                 unoptimized={true}
                             />
                         </div>
-                    : <></>
+                    : <div className={styles.filmBlock}>
+                        <Image className={styles.photoImg} draggable='false'
+                            loader={() => data.photos ? data.photos[Math.round(data.photos.length / 2) - 1] : ''}
+                            src={data.photos ? data.photos[Math.round(data.photos.length / 2) - 1] : ''}
+                            alt='photo3 img'
+                            width={1}
+                            height={1}
+                            priority={true}
+                            unoptimized={true}
+                        />
+                    </div>
                 }
             </div>
             <Modal active={active} setActive={setActive}>

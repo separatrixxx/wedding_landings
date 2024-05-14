@@ -98,7 +98,7 @@ export function getData(dispatch: any, theme: '' | 'minimal' | 'romance' | 'phot
             howToGet: true,
         },
         photoMain: '/photoImgMain.webp',
-        photos: ['/photoImg1.webp', '/photoImg2.webp', '/photoImg3.webp', '/photoImg3.webp', '/photoImg3.webp']
+        photos: ['/photoImg1.webp', '/photoImg2.webp', '/photoImg3.webp']
     };
 
     dispatch(setData(data));

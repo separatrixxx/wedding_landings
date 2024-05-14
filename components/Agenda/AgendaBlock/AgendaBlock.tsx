@@ -24,7 +24,7 @@ export const AgendaBlock = (): JSX.Element => {
                     <div className={styles.filmBlock}>
                         <div>
                         {
-                            data.photos?.concat(data.photos).concat(data.photos).map(p => (
+                            data.photos?.concat(data.photos).concat(data.photos).reverse().map(p => (
                                 <div key={p} className={styles.photoImageBlock}>
                                     <Image className={styles.photoImg} draggable='false'
                                         loader={() => p}

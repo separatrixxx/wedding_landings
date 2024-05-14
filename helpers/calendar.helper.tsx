@@ -7,14 +7,14 @@ export function addDateToCalendar(data: DataInterface, router: any) {
 
     const localeData = setLocale(router.locale);
     const userAgent = window.navigator.userAgent;
-    const isiOS = /iPhone|iPad|iPod/i.test(userAgent);
+    const isAppleDevice = /iPhone|iPad|iPod|Mac/i.test(userAgent);
 
     const titleText = localeData.wedding + ' ' + data.brideName + '&' + data.groomName;
     const details = localeData.wedding + ' ' + data.brideName + '&' + data.groomName + ' ' + localeData.at + ' ' + data.time;
     const location = data.location + ', ' + data.restourant;
 
     let url: string;
-    if (!isiOS) {
+    if (!isAppleDevice) {
         url = `https://www.google.com/calendar/render?action=TEMPLATE&dates=${formattedDate}/${formattedDate}&ctz=UTC&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}&text=${encodeURIComponent(titleText)}`;
         window.open(url, '_blank');
     } else {
