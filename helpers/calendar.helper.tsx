@@ -18,7 +18,7 @@ export function addDateToCalendar(data: DataInterface, router: any) {
         url = `https://www.google.com/calendar/render?action=TEMPLATE&dates=${formattedDate}/${formattedDate}&ctz=UTC&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}&text=${encodeURIComponent(titleText)}`;
         window.open(url, '_blank');
     } else {
-        const icsMSG = `BEGIN:VCALENDAR\nVERSION:2.0\r\nPRODID:-//Your Company//NONSGML v1.0//EN\r\nBEGIN:VEVENT\r\nUID:${titleText}\r\nDTSTAMP:${formattedDate}\r\nATTENDEE;CN=${titleText};RSVP=TRUE:MAILTO:me@gmail.com\r\nORGANIZER;CN=Organizer:MAILTO:me@gmail.com\r\nDTSTART:${formattedDate}\r\nLOCATION:${location}\r\nSUMMARY:${details}\r\nEND:VEVENT\r\nEND:VCALENDAR`;
+        const icsMSG = `BEGIN:VCALENDAR\nVERSION:2.0\r\nPRODID:-//Your Company//NONSGML v1.0//EN\r\nBEGIN:VEVENT\r\nUID:me@google.com\r\nDTSTAMP:${formattedDate}\r\nATTENDEE;CN=${titleText};\r\nDTSTART:${formattedDate}\r\nLOCATION:${location}\r\nSUMMARY:${details}\r\nEND:VEVENT\r\nEND:VCALENDAR`;
         const title = "newEvent.ics";
         const uri = "data:text/calendar;charset=utf8," + escape(icsMSG);
 
