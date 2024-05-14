@@ -15,6 +15,7 @@ export interface DataInterface {
     howToGet: HowToGetInterface[],
     blocks: BlocksInterface,
     photoMain?: string,
+    photoQuestions?: string,
     photos?: string[],
 }
 

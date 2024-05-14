@@ -96,8 +96,8 @@ export const QuestionsBlock = (): JSX.Element => {
                         </div>
                     : <div className={styles.filmBlock}>
                         <Image className={styles.photoImg} draggable='false'
-                            loader={() => data.photos ? data.photos[Math.round(data.photos.length / 2) - 1] : ''}
-                            src={data.photos ? data.photos[Math.round(data.photos.length / 2) - 1] : ''}
+                            loader={() => data.photoQuestions ? data.photoQuestions : ''}
+                            src={data.photoQuestions ? data.photoQuestions : ''}
                             alt='photo3 img'
                             width={1}
                             height={1}
