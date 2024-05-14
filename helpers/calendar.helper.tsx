@@ -3,31 +3,36 @@ import { setLocale } from "./locale.helper";
 
 
 export function addDateToCalendar(data: DataInterface, router: any) {
-    // Переформатируем дату в формат, который понимает JavaScript: YYYY-MM-DD
     const dateParts = data.date.split('-');
     const isoFormattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
-
+    const dateObject = new Date(isoFormattedDate);
     const localeData = setLocale(router.locale);
-    const details = encodeURIComponent(localeData.wedding + ' ' + data.brideName + '&' + data.groomName + ' ' + localeData.at + ' ' + data.time);
-    const location = encodeURIComponent(data.location + ', ' + data.restourant);
-
     const userAgent = window.navigator.userAgent;
     const isiOS = /iPhone|iPad|iPod/i.test(userAgent);
 
+    const startTime = dateObject.toISOString().replace(/-|:|\.\d{3}/g, '');
+    const endTime = new Date(dateObject.getTime() + 3600000).toISOString().replace(/-|:|\.\d{3}/g, ''); // +1 hour for example
+
+    const details = localeData.wedding + ' ' + data.brideName + '&' + data.groomName + ' ' + localeData.at + ' ' + data.time;
+    const location = data.location + ', ' + data.restourant;
+
     let url: string;
-
-    // Создаем объекты Date из ISO строки
-    const startTime = new Date(isoFormattedDate).toISOString().replace(/-|:|\.\d{3}/g, '');
-    const endTime = new Date(isoFormattedDate).toISOString().replace(/-|:|\.\d{3}/g, ''); // Добавьте время окончания, если требуется
-
-    if (isiOS) {
-        // Создаем URL для .ics формата, который можно открыть на устройствах Apple
-        url = `https://www.google.com/calendar/render?action=TEMPLATE&dates=${startTime}/${endTime}&ctz=UTC&details=${details}&location=${location}&text=${encodeURIComponent(localeData.wedding + ' ' + data.brideName + '&' + data.groomName)}`;
+    if (!isiOS) {
+        // URL for non-iOS devices (Google Calendar)
+        url = `https://www.google.com/calendar/render?action=TEMPLATE&dates=${startTime}/${endTime}&ctz=UTC&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}&text=${encodeURIComponent(details)}`;
+        window.open(url, '_blank');
     } else {
-        // Используем Google Calendar для других устройств
-        const formattedDate = isoFormattedDate.split('-').join('');
-        url = `https://www.google.com/calendar/render?action=TEMPLATE&dates=${formattedDate}/${formattedDate}&ctz=UTC&details=${details}&location=${location}&text=${encodeURIComponent(localeData.wedding + ' ' + data.brideName + '&' + data.groomName)}`;
-    }
+        // ICS format for iOS devices
+        var icsMSG = `BEGIN:VCALENDAR\nVERSION:2.0\r\nPRODID:-//Your Company//NONSGML v1.0//EN\r\nBEGIN:VEVENT\r\nUID:me@google.com\r\nDTSTAMP:${startTime}\r\nATTENDEE;CN=${data.brideName};RSVP=TRUE:MAILTO:me@gmail.com\r\nORGANIZER;CN=Organizer:MAILTO:me@gmail.com\r\nDTSTART:${startTime}\r\nDTEND:${endTime}\r\nLOCATION:${encodeURIComponent(location)}\r\nSUMMARY:${encodeURIComponent(details)}\r\nEND:VEVENT\r\nEND:VCALENDAR`;
+        var title = "newEvent.ics";
+        var uri = "data:text/calendar;charset=utf8," + escape(icsMSG);
 
-    window.open(url, '_blank');
+        var link = document.createElement("a");
+        link.href = uri;
+        link.download = title;
+        link.target = "_blank";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
 }
