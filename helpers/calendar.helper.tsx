@@ -20,7 +20,7 @@ export function addDateToCalendar(data: DataInterface, router: any) {
     const startTime = new Date(isoFormattedDate).toISOString().replace(/-|:|\.\d{3}/g, '');
     const endTime = new Date(isoFormattedDate).toISOString().replace(/-|:|\.\d{3}/g, ''); // Добавьте время окончания, если требуется
 
-    if (!isiOS) {
+    if (isiOS) {
         // Создаем URL для .ics формата, который можно открыть на устройствах Apple
         url = `data:text/calendar;charset=utf8,BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nDTSTART:${startTime}\nDTEND:${endTime}\nSUMMARY:${localeData.wedding + ' ' + data.brideName + '&' + data.groomName}\nLOCATION:${data.location + ', ' + data.restourant}\nDESCRIPTION:${details}\nEND:VEVENT\nEND:VCALENDAR`;
     } else {
