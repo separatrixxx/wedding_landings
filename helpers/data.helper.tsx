@@ -2,9 +2,9 @@ import { DataInterface } from "../interfaces/data.interface";
 import { setData } from "../features/data/dataSlice";
 
 
-export function getData(dispatch: any, theme: '' | 'minimal' | 'romance' | 'photo') {
+export function getData(dispatch: any) {
     const data: DataInterface = {
-        theme: theme,
+        theme: 'minimal',
         groomName: 'Ivan',
         brideName: 'Maria',
         date: '29-08-2024',

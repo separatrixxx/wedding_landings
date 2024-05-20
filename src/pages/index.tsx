@@ -11,14 +11,8 @@ function Main(): JSX.Element {
   const router = useRouter(); 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    let theme = router.query.theme;
-
-    if (theme !== 'minimal' && theme !== 'romance' && theme !== 'photo') {
-      theme = 'minimal';
-    }
-    
-    getData(dispatch, theme as '' | 'minimal' | 'romance' | 'photo');
+  useEffect(() => {    
+    getData(dispatch);
   }, [dispatch, router.query]);
 
   return (

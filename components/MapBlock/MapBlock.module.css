@@ -24,10 +24,11 @@
 }
 
 .mapRomance > h1 {
+	padding: 30px 150px;
+
 	font-family: var(--fontRomance1);
 	font-weight: 600;
 	justify-self: center;
-	padding: 30px 150px;
 }
 
 .mapPhoto > h1 {
