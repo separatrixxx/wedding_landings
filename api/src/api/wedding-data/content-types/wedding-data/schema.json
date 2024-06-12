@@ -1,0 +1,126 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wedding_datas",
+  "info": {
+    "singularName": "wedding-data",
+    "pluralName": "wedding-datas",
+    "displayName": "WeddingData",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "minimal",
+        "romance",
+        "photo"
+      ],
+      "default": "minimal",
+      "required": true
+    },
+    "groomName": {
+      "type": "string",
+      "required": true
+    },
+    "brideName": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "string",
+      "required": true
+    },
+    "time": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "locationMap": {
+      "type": "string",
+      "required": true
+    },
+    "restourant": {
+      "type": "string",
+      "required": true
+    },
+    "letter": {
+      "type": "richtext",
+      "required": true
+    },
+    "questions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "questions.questions",
+      "required": true
+    },
+    "dressCode": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "dress-code.dress-code"
+    },
+    "dressCodeText": {
+      "type": "string",
+      "required": true
+    },
+    "agenda": {
+      "type": "component",
+      "repeatable": true,
+      "required": true,
+      "component": "agenda.agenda"
+    },
+    "howToGet": {
+      "type": "component",
+      "repeatable": true,
+      "required": true,
+      "component": "how-to-get.how-to-get"
+    },
+    "blocks": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "blocks.blocks"
+    },
+    "photoMain": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "photoQuestions": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "photos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "stylesConfig": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "styles-config.styles-config"
+    }
+  }
+}

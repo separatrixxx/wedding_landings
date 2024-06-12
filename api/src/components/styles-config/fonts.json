@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_styles_config_fonts",
+  "info": {
+    "displayName": "Fonts",
+    "icon": "star"
+  },
+  "options": {},
+  "attributes": {
+    "fontCommon": {
+      "type": "string",
+      "required": true,
+      "default": "'Bad Script', sans-serif"
+    },
+    "fontMinimal1": {
+      "type": "string"
+    },
+    "fontMinimal2": {
+      "type": "string"
+    },
+    "fontMinimal3": {
+      "type": "string"
+    },
+    "fontRomance1": {
+      "type": "string"
+    },
+    "fontRomance2": {
+      "type": "string"
+    },
+    "fontRomance3": {
+      "type": "string"
+    },
+    "fontPhoto1": {
+      "type": "string"
+    },
+    "fontPhoto2": {
+      "type": "string"
+    },
+    "fontPhoto3": {
+      "type": "string"
+    }
+  }
+}

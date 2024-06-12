@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_blocks_blocks",
+  "info": {
+    "displayName": "Blocks",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "timer": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "questions": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "dressCode": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "agenda": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "message": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "howToGet": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

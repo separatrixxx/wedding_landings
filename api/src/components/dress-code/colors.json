@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_dress_code_colors",
+  "info": {
+    "displayName": "Colors",
+    "icon": "shirt"
+  },
+  "options": {},
+  "attributes": {
+    "color": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_agenda_agenda",
+  "info": {
+    "displayName": "Agenda",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "time": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_questions_answers",
+  "info": {
+    "displayName": "Answers",
+    "icon": "question"
+  },
+  "options": {},
+  "attributes": {
+    "answer": {
+      "type": "string",
+      "required": true
+    },
+    "isTextArea": {
+      "type": "boolean",
+      "default": false
+    },
+    "isOnlyOne": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

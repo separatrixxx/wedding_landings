@@ -1,0 +1,53 @@
+{
+  "collectionName": "components_styles_config_colors",
+  "info": {
+    "displayName": "Colors",
+    "icon": "star"
+  },
+  "options": {},
+  "attributes": {
+    "dark": {
+      "type": "string",
+      "required": true,
+      "default": "#171717"
+    },
+    "light": {
+      "type": "string",
+      "required": true,
+      "default": "#FFF"
+    },
+    "textDark": {
+      "type": "string",
+      "required": true,
+      "default": "#171717"
+    },
+    "textLight": {
+      "type": "string",
+      "default": "#FFF",
+      "required": true
+    },
+    "error": {
+      "type": "string",
+      "required": true,
+      "default": "#FF1500"
+    },
+    "primaryMinimal": {
+      "type": "string"
+    },
+    "backgroundMinimal": {
+      "type": "string"
+    },
+    "primaryRomance": {
+      "type": "string"
+    },
+    "backgroundRomance": {
+      "type": "string"
+    },
+    "primaryPhoto": {
+      "type": "string"
+    },
+    "backgroundPhoto": {
+      "type": "string"
+    }
+  }
+}

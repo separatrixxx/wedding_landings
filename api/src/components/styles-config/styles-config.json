@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_styles_config_styles_configs",
+  "info": {
+    "displayName": "StylesConfig",
+    "icon": "star",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "colors": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "styles-config.colors"
+    },
+    "fonts": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "styles-config.fonts"
+    }
+  }
+}

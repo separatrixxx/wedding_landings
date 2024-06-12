@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_dress_code_dress_codes",
+  "info": {
+    "displayName": "DressCode",
+    "icon": "shirt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "colors": {
+      "type": "component",
+      "repeatable": true,
+      "component": "dress-code.colors",
+      "required": true
+    }
+  }
+}
