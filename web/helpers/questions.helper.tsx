@@ -8,8 +8,6 @@ export async function sendAnswers(questions: QuestionInterface[], answers: Answe
     const allAnswered = questions.every(q => answers.some(a => a.question === q.question && a.answers.length > 0));
     
     if (allAnswered) {
-        ToastSuccess(setLocale(router.locale).questions_sent_succesfully);
-
         let message: string = '';
 
         for (let ans of answers) {
@@ -37,10 +35,10 @@ export async function sendAnswers(questions: QuestionInterface[], answers: Answe
             }
         })
             .then(function () {
-                ToastSuccess(setLocale(router.locale).message_sent_succesfully);
+                ToastSuccess(setLocale(router.locale).questions_sent_succesfully);
             })
             .catch(function (error: string) {
-                ToastSuccess(error);
+                ToastError(error);
             });
     } else {
         ToastError(setLocale(router.locale).questions_error);

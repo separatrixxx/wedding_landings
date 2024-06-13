@@ -19,7 +19,7 @@ export async function sendMessage(message: string, email: string, setMessage: (e
                 setMessage('');
             })
             .catch(function (error: string) {
-                ToastSuccess(error);
+                ToastError(error);
             });
     } else {
         ToastError(setLocale(router.locale).message_error);

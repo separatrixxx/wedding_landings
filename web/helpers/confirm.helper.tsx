@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ToastSuccess } from "../components/Common/Toast/Toast";
+import { ToastError, ToastSuccess } from "../components/Common/Toast/Toast";
 import { setLocale } from "./locale.helper";
 
 
@@ -16,6 +16,6 @@ export async function confirmPresence(name: string, email: string, router: any) 
             ToastSuccess(setLocale(router.locale).presence_confirmed);
         })
         .catch(function (error: string) {
-            ToastSuccess(error);
+            ToastError(error);
         });
 }
