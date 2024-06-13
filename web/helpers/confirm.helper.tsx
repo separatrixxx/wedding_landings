@@ -1,7 +1,21 @@
+import axios from "axios";
 import { ToastSuccess } from "../components/Common/Toast/Toast";
 import { setLocale } from "./locale.helper";
 
 
-export function confirmPresence(name: string, router: any) {
-    ToastSuccess(setLocale(router.locale).presence_confirmed);
+export async function confirmPresence(name: string, email: string, router: any) {
+    await axios.post(process.env.NEXT_PUBLIC_DOMAIN + '/api/emails', {
+        "data": {
+            "to": email,
+            "subject": setLocale(router.locale).confirm_text1,
+            "text": setLocale(router.locale).guest + ' ' + name + ' ' + setLocale(router.locale).confirm_text2,
+            "html": ""
+        }
+    })
+        .then(function () {
+            ToastSuccess(setLocale(router.locale).presence_confirmed);
+        })
+        .catch(function (error: string) {
+            ToastSuccess(error);
+        });
 }

@@ -1,16 +1,47 @@
+import axios from "axios";
 import { ToastError, ToastSuccess } from "../components/Common/Toast/Toast";
 import { AnswerInterface, QuestionInterface } from "../interfaces/data.interface";
 import { setLocale } from "./locale.helper";
 
 
-export function sendAnswers(questions: QuestionInterface[], answers: AnswerInterface[], name: string, router: any) {
+export async function sendAnswers(questions: QuestionInterface[], answers: AnswerInterface[], name: string, email: string, router: any) {
     const allAnswered = questions.every(q => answers.some(a => a.question === q.question && a.answers.length > 0));
     
     if (allAnswered) {
         ToastSuccess(setLocale(router.locale).questions_sent_succesfully);
 
-        console.log(name);
-        console.log(answers);
+        let message: string = '';
+
+        for (let ans of answers) {
+            message += ans.question;
+            message += '\n';
+
+            for (let a of ans.answers) {
+                message += a;
+                message += '\n';
+            }
+
+            message += '\n\n';
+        }
+
+        message += setLocale(router.locale).questions_text;
+        message += ' ';
+        message += name;
+
+        await axios.post(process.env.NEXT_PUBLIC_DOMAIN + '/api/emails', {
+            "data": {
+                "to": email,
+                "subject": setLocale(router.locale).questions_text + ' ' + name,
+                "text": message,
+                "html": ""
+            }
+        })
+            .then(function () {
+                ToastSuccess(setLocale(router.locale).message_sent_succesfully);
+            })
+            .catch(function (error: string) {
+                ToastSuccess(error);
+            });
     } else {
         ToastError(setLocale(router.locale).questions_error);
     }

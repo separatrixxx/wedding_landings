@@ -1,0 +1,38 @@
+stages:
+  - dockerize
+  - deploy
+
+variables:
+  DOCKER_TLS_CERTDIR: "/certs"
+
+dockerize_api:
+  stage: dockerize
+  tags:
+    - gitlab-org-docker
+  image: docker:24.0.5
+  services:
+    - docker:dind
+  before_script:
+    - docker info
+  script:
+    - echo $CI_JOB_TOKEN | docker login -u $DOC_LOGIN --password-stdin $CI_REG    
+    - docker build -t $TAG_COMMIT_RSVP_API .
+    - docker push $TAG_COMMIT_RSVP_API
+  only:
+    - main
+
+deploy_job:
+  stage: deploy
+  tags:
+    - build
+  script:
+    - apt-get update -y && apt-get install -y openssh-client
+    - echo "$SSH_KEY" > id_rsa
+    - chmod 600 id_rsa
+    - ssh -o StrictHostKeyChecking=no -i id_rsa $SSH_USER@$SSH_IP "echo $CI_JOB_TOKEN | docker login -u $DOC_LOGIN --password-stdin $CI_REG"
+    - ssh -o StrictHostKeyChecking=no -i id_rsa $SSH_USER@$SSH_IP "docker pull $TAG_COMMIT_RSVP_API"
+    - ssh -o StrictHostKeyChecking=no -i id_rsa $SSH_USER@$SSH_IP "cd $HOST_PATH && docker compose up -d"
+    - ssh -o StrictHostKeyChecking=no -i id_rsa $SSH_USER@$SSH_IP "docker image prune -a -f"
+  only:
+    - main
+

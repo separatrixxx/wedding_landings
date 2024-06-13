@@ -25,7 +25,7 @@ export const QuestionsBlock = (): JSX.Element => {
 
     const handleKeyPress = (e: any) => {
         if (e.key === 'Enter') {
-            sendAnswers(data.questions, answers, name, router);
+            sendAnswers(data.questions, answers, name, data.email, router);
             setActive(false);
             setName('');
         }

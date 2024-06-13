@@ -32,7 +32,7 @@ export const MessageBlock = (): JSX.Element => {
                 name='message'
                 aria-label='message' />
             <Button text={setLocale(router.locale).send} type={data.theme} subtype='light'
-                onClick={() => sendMessage(message, setMessage, router)} />
+                onClick={() => sendMessage(message, data.email, setMessage, router)} />
             {
                 data.theme === 'romance' ?
                     <div className={styles.imageBlock}>

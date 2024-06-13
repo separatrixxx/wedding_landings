@@ -1,12 +1,26 @@
+import axios from "axios";
 import { ToastError, ToastSuccess } from "../components/Common/Toast/Toast";
 import { setLocale } from "./locale.helper";
 
 
-export function sendMessage(message: string, setMessage: (e: string) => void, router: any) {
+export async function sendMessage(message: string, email: string, setMessage: (e: string) => void, router: any) {
     if (message.length !== 0) {
-        ToastSuccess(setLocale(router.locale).message_sent_succesfully);
+        await axios.post(process.env.NEXT_PUBLIC_DOMAIN + '/api/emails', {
+            "data": {
+                "to": email,
+                "subject": setLocale(router.locale).message_from_a_guest,
+                "text": message,
+                "html": ""
+            }
+        })
+            .then(function () {
+                ToastSuccess(setLocale(router.locale).message_sent_succesfully);
 
-        setMessage('');
+                setMessage('');
+            })
+            .catch(function (error: string) {
+                ToastSuccess(error);
+            });
     } else {
         ToastError(setLocale(router.locale).message_error);
     }

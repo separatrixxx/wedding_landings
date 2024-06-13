@@ -32,4 +32,9 @@ export const ru = {
     questions_sent_succesfully: "Ваши ответы успешно отправлены",
     questions_error: "Сначала ответьте на все вопросы",
     enter_your_name: "Введите ваше имя",
+    confirm_text1: "Подтверждение присутствия",
+    guest: "Гость",
+    confirm_text2: "подтвердил присутствие на вашей свадьбе",
+    message_from_a_guest: "Сообщение от гостя",
+    questions_text: "Ответы на вопросы от гостя",
 };

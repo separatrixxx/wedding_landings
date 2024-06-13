@@ -20,7 +20,7 @@ export const ConfirmBlock = (): JSX.Element => {
 
     const handleKeyPress = (e: any) => {
         if (e.key === 'Enter') {
-            confirmPresence(name, router);
+            confirmPresence(name, data.email, router);
             setActive(false);
             setName('');
         }

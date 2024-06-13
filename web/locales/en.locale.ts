@@ -32,4 +32,9 @@ export const en = {
     questions_sent_succesfully: "Your answers have been sent successfully",
     questions_error: "Answer all questions first",
     enter_your_name: "Enter your name",
+    confirm_text1: "Confirmation of presence",
+    guest: "Guest",
+    confirm_text2: "confirmed presence at your wedding",
+    message_from_a_guest: "Message from a guest",
+    questions_text: "Answers to questions from guest",
 };
