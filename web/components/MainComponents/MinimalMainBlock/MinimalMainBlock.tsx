@@ -4,7 +4,7 @@ import { AppState } from '../../../features/store/store';
 import { setLocale } from '../../../helpers/locale.helper';
 import { useRouter } from 'next/router';
 import { Htag } from '../../Common/Htag/Htag';
-import { formatDateMinimal } from '../../../helpers/format.helper';
+import { formatDateMinimal, formatTime } from '../../../helpers/format.helper';
 import Image from 'next/image';
 
 
@@ -33,7 +33,7 @@ export const MinimalMainBlock = (): JSX.Element => {
                     {data.brideName} <span className={styles.and}>&</span> {data.groomName}
                 </Htag>
                 <Htag tag='s' className={styles.time}>
-                    {data.time}
+                    {formatTime(data.time)}
                 </Htag>
                 <Htag tag='m'>
                     {data.location}

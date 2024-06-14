@@ -6,13 +6,14 @@ import { TimerItem } from '../TimerItem/TimerItem';
 import { setLocale } from '../../../helpers/locale.helper';
 import { useEffect, useMemo, useState } from 'react';
 import cn from 'classnames';
+import { formatDateString } from '../../../helpers/format.helper';
 
 
 export const TimerBlock = (): JSX.Element => {
     const router = useRouter();
     const data = useSelector((state: AppState) => state.data.data);
 
-    const dateString = data.date + "T" + data.time;
+    const dateString = formatDateString(data.date + "T" + data.time);
     const dateParts = dateString.split('T')[0].split('-');
     const timeParts = dateString.split('T')[1].split(':');
     const targetDate = useMemo(() => {

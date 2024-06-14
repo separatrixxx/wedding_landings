@@ -4,7 +4,7 @@ import { AppState } from '../../../features/store/store';
 import { setLocale } from '../../../helpers/locale.helper';
 import { useRouter } from 'next/router';
 import { Htag } from '../../Common/Htag/Htag';
-import { formatDateRomance } from '../../../helpers/format.helper';
+import { formatDateRomance, formatTime } from '../../../helpers/format.helper';
 import Image from 'next/image';
 
 
@@ -29,7 +29,7 @@ export const RomanceMainBlock = (): JSX.Element => {
                     </div>
                     <div className={styles.timeDiv}>
                         <Htag tag='l' className={styles.time}>
-                            {data.time}
+                            {formatTime(data.time)}
                         </Htag>
                         <Htag tag='m' className={styles.location}>
                             {data.location}

@@ -2,6 +2,7 @@ import { AgendaItemProps } from './AgendaItem.props';
 import styles from './AgendaItem.module.css';
 import { Htag } from '../../Common/Htag/Htag';
 import cn from 'classnames';
+import { formatTime } from '../../../helpers/format.helper';
 
 
 
@@ -14,7 +15,7 @@ export const AgendaItem = ({ agenda, type, isRight }: AgendaItemProps): JSX.Elem
             [styles.itemRight]: isRight,
         })}>
             <Htag tag='xxl'>
-                {agenda.time}
+                {formatTime(agenda.time)}
             </Htag>
             <div className={styles.agendaTextDiv}>
                 <Htag tag='m' className={styles.title}>

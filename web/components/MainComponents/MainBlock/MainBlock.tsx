@@ -8,7 +8,7 @@ import { MinimalMainBlock } from '../MinimalMainBlock/MinimalMainBlock';
 import { addDateToCalendar } from '../../../helpers/calendar.helper';
 import { RomanceMainBlock } from '../RomanceMainBlock/RomanceMainBlock';
 import { Htag } from '../../Common/Htag/Htag';
-import { formatDateRomance } from '../../../helpers/format.helper';
+import { formatDateRomance, formatTime } from '../../../helpers/format.helper';
 import Image from 'next/image';
 import cn from 'classnames';
 
@@ -39,7 +39,7 @@ export const MainBlock = (): JSX.Element => {
                                     {formatDateRomance(data.date)}
                                 </Htag>
                                 <Htag tag='l'>
-                                    {data.time}
+                                    {formatTime(data.time)}
                                 </Htag>
                             </div>
                             <div>
