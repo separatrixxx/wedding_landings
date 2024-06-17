@@ -1,14 +1,13 @@
 import Head from 'next/head';
-import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
+import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import axios, { AxiosResponse } from 'axios';
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { setLocale } from '../../../helpers/locale.helper';
 import { WeddingPage } from '../../../page_components/WeddingPage/WeddingPage';
-import { DataInterface, DataPlural, DataSingle, StylesConfigInterface } from '../../../interfaces/data.interface';
+import { DataInterface, DataSingle, StylesConfigInterface } from '../../../interfaces/data.interface';
 import { setData } from '../../../features/data/dataSlice';
-
 
 const setCSSVariables = (config: StylesConfigInterface) => {
     if (typeof window !== 'undefined' && config) {
@@ -56,27 +55,7 @@ export default function Wedding({ wedding }: WeddingProps) {
     }
 }
 
-export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-    const paths: any[] = [];
-    
-    for (const locale of locales || []) {
-        const { data: response }: AxiosResponse<DataPlural> = await axios.get(`${process.env.NEXT_PUBLIC_DOMAIN}/api/wedding-datas`);    
-
-        response.data.forEach(wedding => {
-            paths.push({
-                params: { id: wedding.id.toString(), wedding: wedding.brideName.toLowerCase() + '_and_' + wedding.groomName.toLowerCase() },
-                locale,
-            });
-        });
-    }
-
-    return {
-        paths,
-        fallback: 'blocking',
-    };
-};
-
-export const getStaticProps: GetStaticProps<WeddingProps> = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps<WeddingProps> = async ({ params }) => {
     if (!params || !params.id) {
         return {
             notFound: true

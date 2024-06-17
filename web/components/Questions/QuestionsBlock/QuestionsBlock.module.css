@@ -116,7 +116,7 @@
 	background-image: url('/frameImg.webp');
 	background-repeat: no-repeat;
 	background-position: top;
-	background-size: cover;
+	background-size: 100%;
 
 	justify-items: center;
 	gap: 10px;

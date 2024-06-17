@@ -7,6 +7,7 @@ import { setLocale } from '../../../helpers/locale.helper';
 import Image from 'next/image';
 import { AgendaItem } from '../AgendaItem/AgendaItem';
 import cn from 'classnames';
+import { FilmBlock } from '../../FilmBlock/FilmBlock';
 
 
 export const AgendaBlock = (): JSX.Element => {
@@ -21,25 +22,7 @@ export const AgendaBlock = (): JSX.Element => {
         })}>
             {
                 data.theme === 'photo' ?
-                    <div className={styles.filmBlock}>
-                        <div>
-                        {
-                            data.photos?.concat(data.photos).concat(data.photos).reverse().map((p, i) => (
-                                <div key={p + i} className={styles.photoImageBlock}>
-                                    <Image className={styles.photoImg} draggable='false'
-                                        loader={() => process.env.NEXT_PUBLIC_DOMAIN + p}
-                                        src={process.env.NEXT_PUBLIC_DOMAIN + p}
-                                        alt='photo img'
-                                        width={1}
-                                        height={1}
-                                        priority={true}
-                                        unoptimized={true}
-                                    />
-                                </div>
-                            ))
-                        }
-                        </div>
-                    </div>
+                    <FilmBlock />
                 : <></>
             }
             {
