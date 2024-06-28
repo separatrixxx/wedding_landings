@@ -4,7 +4,7 @@ module.exports = {
 		defaultLocale: 'en',
 	},
 	images: {
-		domains: ['legaldoc.vercel.app/'],
+		domains: ['http://wedding-landings.vercel.app/'],
 	},
 	webpack(config) {
 		config.module.rules.push({
