@@ -9,6 +9,7 @@ import { WeddingPage } from '../../../page_components/WeddingPage/WeddingPage';
 import { DataInterface, DataSingle, StylesConfigInterface } from '../../../interfaces/data.interface';
 import { setData } from '../../../features/data/dataSlice';
 
+
 const setCSSVariables = (config: StylesConfigInterface) => {
     if (typeof window !== 'undefined' && config) {
         const { colors, fonts } = config;
