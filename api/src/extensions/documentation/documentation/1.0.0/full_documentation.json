@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-06-13T09:55:16.935Z"
+    "x-generation-date": "2024-07-03T13:03:07.123Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -504,6 +504,145 @@
           }
         }
       },
+      "WeddingDataLocalizationRequest": {
+        "required": [
+          "theme",
+          "groomName",
+          "brideName",
+          "location",
+          "locationMap",
+          "restourant",
+          "letter",
+          "questions",
+          "dressCode",
+          "dressCodeText",
+          "agenda",
+          "howToGet",
+          "blocks",
+          "stylesConfig",
+          "date",
+          "time",
+          "email",
+          "link",
+          "locale"
+        ],
+        "type": "object",
+        "properties": {
+          "theme": {
+            "type": "string",
+            "enum": [
+              "minimal",
+              "romance",
+              "photo"
+            ]
+          },
+          "groomName": {
+            "type": "string"
+          },
+          "brideName": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "locationMap": {
+            "type": "string"
+          },
+          "restourant": {
+            "type": "string"
+          },
+          "letter": {
+            "type": "string"
+          },
+          "questions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QuestionsQuestionsComponent"
+            }
+          },
+          "dressCode": {
+            "$ref": "#/components/schemas/DressCodeDressCodeComponent"
+          },
+          "dressCodeText": {
+            "type": "string"
+          },
+          "agenda": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AgendaAgendaComponent"
+            }
+          },
+          "howToGet": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HowToGetHowToGetComponent"
+            }
+          },
+          "blocks": {
+            "$ref": "#/components/schemas/BlocksBlocksComponent"
+          },
+          "photoMain": {
+            "oneOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "example": "string or id"
+          },
+          "photoQuestions": {
+            "oneOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "example": "string or id"
+          },
+          "photos": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "example": "string or id"
+            }
+          },
+          "stylesConfig": {
+            "$ref": "#/components/schemas/StylesConfigStylesConfigComponent"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "time": {
+            "type": "string",
+            "format": "time",
+            "example": "12:54.000"
+          },
+          "email": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmailEmailComponent"
+            }
+          },
+          "link": {
+            "type": "string"
+          },
+          "locale": {
+            "type": "string"
+          }
+        }
+      },
       "WeddingDataRequest": {
         "type": "object",
         "required": [
@@ -515,8 +654,6 @@
               "theme",
               "groomName",
               "brideName",
-              "date",
-              "time",
               "location",
               "locationMap",
               "restourant",
@@ -527,8 +664,11 @@
               "agenda",
               "howToGet",
               "blocks",
+              "stylesConfig",
+              "date",
+              "time",
               "email",
-              "stylesConfig"
+              "link"
             ],
             "type": "object",
             "properties": {
@@ -544,12 +684,6 @@
                 "type": "string"
               },
               "brideName": {
-                "type": "string"
-              },
-              "date": {
-                "type": "string"
-              },
-              "time": {
                 "type": "string"
               },
               "location": {
@@ -627,11 +761,97 @@
                   "example": "string or id"
                 }
               },
-              "email": {
-                "type": "string"
-              },
               "stylesConfig": {
                 "$ref": "#/components/schemas/StylesConfigStylesConfigComponent"
+              },
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "time": {
+                "type": "string",
+                "format": "time",
+                "example": "12:54.000"
+              },
+              "email": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/EmailEmailComponent"
+                }
+              },
+              "link": {
+                "type": "string"
+              },
+              "locale": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "WeddingDataResponseDataObjectLocalized": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/WeddingData"
+          }
+        }
+      },
+      "WeddingDataLocalizationResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/WeddingDataResponseDataObjectLocalized"
+          },
+          "meta": {
+            "type": "object"
+          }
+        }
+      },
+      "WeddingDataListResponseDataItemLocalized": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/WeddingData"
+          }
+        }
+      },
+      "WeddingDataLocalizationListResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WeddingDataListResponseDataItemLocalized"
+            }
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "pagination": {
+                "type": "object",
+                "properties": {
+                  "page": {
+                    "type": "integer"
+                  },
+                  "pageSize": {
+                    "type": "integer",
+                    "minimum": 25
+                  },
+                  "pageCount": {
+                    "type": "integer",
+                    "maximum": 1
+                  },
+                  "total": {
+                    "type": "integer"
+                  }
+                }
               }
             }
           }
@@ -689,8 +909,6 @@
           "theme",
           "groomName",
           "brideName",
-          "date",
-          "time",
           "location",
           "locationMap",
           "restourant",
@@ -701,8 +919,11 @@
           "agenda",
           "howToGet",
           "blocks",
+          "stylesConfig",
+          "date",
+          "time",
           "email",
-          "stylesConfig"
+          "link"
         ],
         "properties": {
           "theme": {
@@ -717,12 +938,6 @@
             "type": "string"
           },
           "brideName": {
-            "type": "string"
-          },
-          "date": {
-            "type": "string"
-          },
-          "time": {
             "type": "string"
           },
           "location": {
@@ -1667,11 +1882,26 @@
               }
             }
           },
-          "email": {
-            "type": "string"
-          },
           "stylesConfig": {
             "$ref": "#/components/schemas/StylesConfigStylesConfigComponent"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "time": {
+            "type": "string",
+            "format": "time",
+            "example": "12:54.000"
+          },
+          "email": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmailEmailComponent"
+            }
+          },
+          "link": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",
@@ -1718,6 +1948,20 @@
                 }
               }
             }
+          },
+          "localizations": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/WeddingDataListResponseDataItemLocalized"
+                }
+              }
+            }
+          },
+          "locale": {
+            "type": "string"
           }
         }
       },
@@ -1805,14 +2049,16 @@
           "id": {
             "type": "number"
           },
-          "time": {
-            "type": "string"
-          },
           "title": {
             "type": "string"
           },
           "description": {
             "type": "string"
+          },
+          "time": {
+            "type": "string",
+            "format": "time",
+            "example": "12:54.000"
           }
         }
       },
@@ -1940,6 +2186,17 @@
                 "type": "string"
               }
             }
+          }
+        }
+      },
+      "EmailEmailComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "email": {
+            "type": "string"
           }
         }
       },
@@ -3159,6 +3416,98 @@
           }
         ],
         "operationId": "delete/wedding-datas/{id}"
+      }
+    },
+    "/wedding-datas/{id}/localizations": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WeddingDataLocalizationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Wedding-data"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "operationId": "post/wedding-datas/{id}/localizations",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WeddingDataLocalizationRequest"
+              }
+            }
+          }
+        }
       }
     },
     "/upload": {

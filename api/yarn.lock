@@ -1567,7 +1567,7 @@
     react-query "3.39.3"
     yup "0.32.9"
 
-"@strapi/plugin-i18n@4.24.5":
+"@strapi/plugin-i18n@^4.24.5":
   version "4.24.5"
   resolved "https://registry.npmjs.org/@strapi/plugin-i18n/-/plugin-i18n-4.24.5.tgz"
   integrity sha512-RtFD1MmeHB/qTTOT4TUkFDSpEP62B4s93CNO0GsklSzvt2slKqaqKtALug8J9PcgGRN/yroqgwqHpptLKOtPcQ==

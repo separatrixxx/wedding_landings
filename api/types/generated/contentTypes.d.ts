@@ -406,33 +406,157 @@ export interface ApiWeddingDataWeddingData extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     theme: Attribute.Enumeration<['minimal', 'romance', 'photo']> &
       Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
       Attribute.DefaultTo<'minimal'>;
-    groomName: Attribute.String & Attribute.Required;
-    brideName: Attribute.String & Attribute.Required;
-    date: Attribute.String & Attribute.Required;
-    time: Attribute.String & Attribute.Required;
-    location: Attribute.String & Attribute.Required;
-    locationMap: Attribute.String & Attribute.Required;
-    restourant: Attribute.String & Attribute.Required;
-    letter: Attribute.RichText & Attribute.Required;
+    groomName: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    brideName: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    location: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locationMap: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    restourant: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    letter: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     questions: Attribute.Component<'questions.questions', true> &
-      Attribute.Required;
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     dressCode: Attribute.Component<'dress-code.dress-code'> &
-      Attribute.Required;
-    dressCodeText: Attribute.String & Attribute.Required;
-    agenda: Attribute.Component<'agenda.agenda', true> & Attribute.Required;
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    dressCodeText: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    agenda: Attribute.Component<'agenda.agenda', true> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     howToGet: Attribute.Component<'how-to-get.how-to-get', true> &
-      Attribute.Required;
-    blocks: Attribute.Component<'blocks.blocks'> & Attribute.Required;
-    photoMain: Attribute.Media<'images'>;
-    photoQuestions: Attribute.Media<'images'>;
-    photos: Attribute.Media<'images', true>;
-    email: Attribute.String & Attribute.Required;
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    blocks: Attribute.Component<'blocks.blocks'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    photoMain: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    photoQuestions: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    photos: Attribute.Media<'images', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     stylesConfig: Attribute.Component<'styles-config.styles-config'> &
-      Attribute.Required;
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    date: Attribute.Date &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    time: Attribute.Time &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    email: Attribute.Component<'email.email', true> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    link: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -448,6 +572,12 @@ export interface ApiWeddingDataWeddingData extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::wedding-data.wedding-data',
+      'oneToMany',
+      'api::wedding-data.wedding-data'
+    >;
+    locale: Attribute.String;
   };
 }
 

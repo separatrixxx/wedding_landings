@@ -10,6 +10,7 @@ import { RomanceMainBlock } from '../RomanceMainBlock/RomanceMainBlock';
 import { Htag } from '../../Common/Htag/Htag';
 import { formatDateRomance, formatTime } from '../../../helpers/format.helper';
 import Image from 'next/image';
+import { LocaleChange } from '../../Common/LocaleChange/LocaleChange';
 import cn from 'classnames';
 
 
@@ -21,8 +22,11 @@ export const MainBlock = (): JSX.Element => {
         <div className={cn(styles.mainBlock, {
             [styles.photoMainBlock]: data.theme === 'photo',
         })}>
-            <Button type={data.theme} subtype='dark' text={setLocale(router.locale).add_to_calendar} isMain={true}
-                onClick={() => addDateToCalendar(data, router)}/>
+            <div className={styles.buttonsDiv}>
+                <Button type={data.theme} subtype='dark' text={setLocale(router.locale).add_to_calendar} isMain={true}
+                    onClick={() => addDateToCalendar(data, router)} />
+                <LocaleChange type={data.theme} />
+            </div>
             {
                 data.theme === 'minimal' ?
                     <MinimalMainBlock /> :

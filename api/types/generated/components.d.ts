@@ -5,11 +5,12 @@ export interface AgendaAgenda extends Schema.Component {
   info: {
     displayName: 'Agenda';
     icon: 'clock';
+    description: '';
   };
   attributes: {
-    time: Attribute.String & Attribute.Required;
     title: Attribute.String & Attribute.Required;
     description: Attribute.String & Attribute.Required;
+    time: Attribute.Time;
   };
 }
 
@@ -58,6 +59,18 @@ export interface DressCodeDressCode extends Schema.Component {
   attributes: {
     text: Attribute.String & Attribute.Required;
     colors: Attribute.Component<'dress-code.colors', true> & Attribute.Required;
+  };
+}
+
+export interface EmailEmail extends Schema.Component {
+  collectionName: 'components_email_emails';
+  info: {
+    displayName: 'email';
+    icon: 'envelop';
+    description: '';
+  };
+  attributes: {
+    email: Attribute.String & Attribute.Required;
   };
 }
 
@@ -171,6 +184,7 @@ declare module '@strapi/types' {
       'blocks.blocks': BlocksBlocks;
       'dress-code.colors': DressCodeColors;
       'dress-code.dress-code': DressCodeDressCode;
+      'email.email': EmailEmail;
       'how-to-get.how-to-get': HowToGetHowToGet;
       'questions.answers': QuestionsAnswers;
       'questions.questions': QuestionsQuestions;

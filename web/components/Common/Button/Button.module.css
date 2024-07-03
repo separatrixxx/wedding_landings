@@ -21,8 +21,9 @@
 }
 
 .buttonMain {
-	margin: 30px 60px;
 	justify-self: right;
+
+	margin: 0;
 }
 
 .button:active {
@@ -72,7 +73,7 @@
 	}
 
 	.buttonMain {
-		margin: 20px 40px;
+		margin: 0;
 	}
 }
 
@@ -84,6 +85,6 @@
 	}
 
 	.buttonMain {
-		margin: 15px 20px;
+		margin: 0;
 	}
 }

@@ -1,41 +1,28 @@
+import { LocaleChangeProps } from './LocaleChange.props';
 import styles from './LocaleChange.module.css';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import { useState } from 'react';
-import { en } from '../../../locales/en.locale';
-import { ru } from '../../../locales/ru.locale';
-import { setLocale } from '../../../helpers/locale.helper';
 import { Htag } from '../Htag/Htag';
-import { Modal } from '../Modal/Modal';
+import { useRouter } from 'next/router';
+import cn from 'classnames';
 
 
-export const LocaleChange = (): JSX.Element => {
+export const LocaleChange = ({ type }: LocaleChangeProps): JSX.Element => {
     const router = useRouter();
+    const { id, link } = router.query;
 
-    const [active, setActive] = useState<boolean>(false);
-
-    const languages = [en, ru];
-    const langIndex = languages.indexOf(setLocale(router.locale));
-
-    if (langIndex !== -1) {
-        languages.splice(langIndex, 1);
-    }
+    const handleLocaleChange = () => {
+        const newLocale = router.locale === 'en' ? 'ru' : 'en';
+        const href = `/${id}/${link}`;
+        router.push(href, href, { locale: newLocale });
+    };
 
     return (
-        <>
-            <Htag tag='m' className={styles.lang} onClick={() => setActive(true)}>
-                {setLocale(router.locale).language}
-            </Htag>
-            <Modal active={active} setActive={setActive}>
-                <div className={styles.blockLanguages}>
-                    {languages.map(m => (
-                        <Link key={m.locale} href={router.asPath} locale={m.locale}
-                            onClick={() => setActive(false)}>
-                            <Htag tag='l' className={styles.langLink}>{m.language}</Htag>
-                        </Link>
-                    ))}
-                </div>
-            </Modal>
-        </>
+        <button className={cn(styles.localeChange, {
+            [styles.localeChangeMinimal]: type === 'minimal',
+            [styles.localeChangeRomance]: type === 'romance',
+            [styles.localeChangePhoto]: type === 'photo',
+        })} onClick={handleLocaleChange}>
+            {router.locale}
+        </button>
     );
 };
+

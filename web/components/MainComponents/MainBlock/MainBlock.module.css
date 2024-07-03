@@ -29,6 +29,17 @@
 	gap: 30%;
 }
 
+.buttonsDiv {
+	display: grid;
+
+	width: fit-content;
+	height: fit-content;
+	margin: 30px 20px;
+	grid-template-columns: 1fr auto;
+	justify-self: right;
+	gap: 20px;
+}
+
 .dateTimeDiv > h1 {
 	font-family: var(--fontPhoto2) !important;
 	font-weight: 400 !important;
@@ -103,6 +114,10 @@
 		height: 500px;
 	}
 
+	.buttonsDiv {
+		margin: 20px 20px;
+	}
+
 	.and {
 		font-size: 90px;
 	}
@@ -121,6 +136,12 @@
 }
 
 @media (max-width: 580px) {
+	.buttonsDiv {
+		gap: 15px;
+
+		margin: 15px;
+	}
+
 	.names {
 		gap: 5px;
 	}

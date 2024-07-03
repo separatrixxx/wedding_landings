@@ -30,13 +30,17 @@ export default function Wedding({ wedding }: WeddingProps) {
     const router = useRouter();
     const dispatch = useDispatch();
 
-    useEffect(() => {    
-        dispatch(setData(wedding));
+    useEffect(() => {
+        if (router.locale === wedding.locale) {
+            dispatch(setData(wedding));
+        } else {
+            dispatch(setData(wedding.localizations));
+        }
 
         if (wedding && wedding.stylesConfig) {
             setCSSVariables(wedding.stylesConfig);
         }
-    }, [dispatch, wedding]);
+    }, [dispatch, wedding, router.locale]);
 
     if (wedding) {
         return (
@@ -57,7 +61,7 @@ export default function Wedding({ wedding }: WeddingProps) {
 }
 
 export const getServerSideProps: GetServerSideProps<WeddingProps> = async ({ params }) => {
-    if (!params || !params.id) {
+    if (!params || !params.id || !params.link) {
         return {
             notFound: true
         };
@@ -65,7 +69,7 @@ export const getServerSideProps: GetServerSideProps<WeddingProps> = async ({ par
     try {
         const { data: wedding }: AxiosResponse<DataSingle> = await axios.get(`${process.env.NEXT_PUBLIC_DOMAIN}/api/wedding-datas/${params.id}`);
 
-        if (!wedding.data || wedding.data.brideName.toLowerCase() + '_and_' + wedding.data.groomName.toLowerCase() !== params.wedding) {
+        if (!wedding.data || wedding.data.link !== params.link || wedding.data.locale === 'ru') {
             return {
                 notFound: true
             };

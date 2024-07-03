@@ -9,7 +9,7 @@ export default ({ env }) => ({
           user: env('EMAIL_USER'),
           pass: env('EMAIL_PASS'),
         },
-        secure: false, // Использовать TLS, если доступно
+        secure: false,
         tls: {
           rejectUnauthorized: false,
         },
@@ -18,6 +18,13 @@ export default ({ env }) => ({
         defaultFrom: 'noreply@ori.wedding',
         defaultReplyTo: 'noreply@ori.wedding',
       },
+    },
+  },
+  i18n: {
+    enabled: true,
+    config: {
+      defaultLocale: 'ru',
+      locales: ['en', 'ru'],
     },
   },
 });

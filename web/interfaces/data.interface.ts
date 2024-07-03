@@ -9,6 +9,7 @@ export interface DataInterface {
     locationMap: string,
     restourant: string,
     letter: string,
+    email: string[],
     questions: QuestionInterface[],
     dressCode: DressCodeInterface,
     dressCodeText: string,
@@ -18,8 +19,10 @@ export interface DataInterface {
     photoMain?: string,
     photoQuestions?: string,
     photos?: string[],
-    email: string,
     stylesConfig: StylesConfigInterface,
+    link: string,
+    locale: 'en' | 'ru',
+    localizations?: DataInterface,
 }
 
 export interface QuestionInterface {

@@ -4,7 +4,7 @@ import { AnswerInterface, QuestionInterface } from "../interfaces/data.interface
 import { setLocale } from "./locale.helper";
 
 
-export async function sendAnswers(questions: QuestionInterface[], answers: AnswerInterface[], name: string, email: string, router: any) {
+export async function sendAnswers(questions: QuestionInterface[], answers: AnswerInterface[], name: string, emails: string[], router: any) {
     const allAnswered = questions.every(q => answers.some(a => a.question === q.question && a.answers.length > 0));
     
     if (allAnswered) {
@@ -15,7 +15,7 @@ export async function sendAnswers(questions: QuestionInterface[], answers: Answe
             message += '\n';
 
             for (let a of ans.answers) {
-                message += a;
+                message += a.text;
                 message += '\n';
             }
 
@@ -26,20 +26,23 @@ export async function sendAnswers(questions: QuestionInterface[], answers: Answe
         message += ' ';
         message += name;
 
-        await axios.post(process.env.NEXT_PUBLIC_DOMAIN + '/api/emails', {
-            "data": {
-                "to": email,
-                "subject": setLocale(router.locale).questions_text + ' ' + name,
-                "text": message,
-                "html": ""
-            }
-        })
-            .then(function () {
-                ToastSuccess(setLocale(router.locale).questions_sent_succesfully);
-            })
-            .catch(function (error: string) {
-                ToastError(error);
+        const requests = emails.map(email => {
+            return axios.post(process.env.NEXT_PUBLIC_DOMAIN + '/api/emails', {
+                "data": {
+                    "to": email,
+                    "subject": setLocale(router.locale).questions_text + ' ' + name,
+                    "text": message,
+                    "html": ""
+                }
             });
+        });
+
+        try {
+            await Promise.all(requests);
+            ToastSuccess(setLocale(router.locale).questions_sent_succesfully);
+        } catch (error: any) {
+            ToastError(error);
+        }
     } else {
         ToastError(setLocale(router.locale).questions_error);
     }

@@ -13,6 +13,7 @@ const data: DataInterface = {
   locationMap: '',
   restourant: '',
   letter: '',
+  email: [],
   questions: [],
   dressCode: {
     text: '',
@@ -29,7 +30,6 @@ const data: DataInterface = {
     message: false,
     howToGet: false,
   },
-  email: '',
   stylesConfig: {
     colors: {
       dark: '',
@@ -57,6 +57,8 @@ const data: DataInterface = {
       fontPhoto3: '',
     },
   },
+  link: '',
+  locale: 'en',
 };
 
 export const dataSlice = createSlice({

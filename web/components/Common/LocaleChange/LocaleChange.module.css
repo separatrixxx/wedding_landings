@@ -1,60 +1,60 @@
-.blockLanguages {
-	display: grid;
-	gap: 10px;
-}
+.localeChange {
+	z-index: 2;
 
-.langLink {
 	width: fit-content;
-	margin: 5px 20px 5px 20px;
+	height: fit-content;
 
 	cursor: pointer;
-	transition-duration: 300ms;
-}
-
-.lang {
-	width: fit-content;
-	margin-right: 60px;
-
-	cursor: pointer;
+	user-select: none;
 	transition-duration: 300ms;
 
-	color: var(--white);
+	border: none;
+	background: none;
+
+	font-size: 24px;
+	justify-self: right;
 }
 
-.lang:active {
+.localeChangeMinimal {
+	color: var(--primaryMinimal) !important;
+
+	font-family: var(--fontMinimal1);
+}
+
+.localeChangeRomance {
+	color: var(--primaryRomance) !important;
+
+	font-family: var(--fontRomance1);
+}
+
+.localeChangePhoto {
+	color: var(--primaryPhoto) !important;
+
+	font-family: var(--fontPhoto1);
+}
+
+.localeChange:active {
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 	filter: brightness(0.9);
 }
 
-.langLink:active {
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-	color: var(--primary);
-}
-
 @media (min-width: 1024px) {
-	.lang:hover {
+	.localeChange:hover {
 		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 		filter: brightness(0.9);
 	}
-
-	.langLink:hover {
-		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-		color: var(--primary);
-	}
 }
 
 @media (max-width: 1024px) {
-	.lang {
-		margin-right: 40px;
+	.localeChange {
+		font-size: 20px;
 	}
 }
 
 @media (max-width: 580px) {
-	.lang {
-		margin-right: 20px;
+	.localeChange {
+		font-size: 18px;
 	}
 }

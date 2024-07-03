@@ -10,7 +10,11 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "theme": {
       "type": "enumeration",
@@ -20,73 +24,130 @@
         "photo"
       ],
       "default": "minimal",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "groomName": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "brideName": {
       "type": "string",
-      "required": true
-    },
-    "date": {
-      "type": "string",
-      "required": true
-    },
-    "time": {
-      "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "location": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "locationMap": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "restourant": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "letter": {
       "type": "richtext",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "questions": {
       "type": "component",
       "repeatable": true,
       "component": "questions.questions",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "dressCode": {
       "type": "component",
       "repeatable": false,
       "required": true,
-      "component": "dress-code.dress-code"
+      "component": "dress-code.dress-code",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "dressCodeText": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "agenda": {
       "type": "component",
       "repeatable": true,
       "required": true,
-      "component": "agenda.agenda"
+      "component": "agenda.agenda",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "howToGet": {
       "type": "component",
       "repeatable": true,
       "required": true,
-      "component": "how-to-get.how-to-get"
+      "component": "how-to-get.how-to-get",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "blocks": {
       "type": "component",
       "repeatable": false,
       "required": true,
-      "component": "blocks.blocks"
+      "component": "blocks.blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "photoMain": {
       "type": "media",
@@ -94,7 +155,12 @@
       "required": false,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "photoQuestions": {
       "type": "media",
@@ -102,7 +168,12 @@
       "required": false,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "photos": {
       "type": "media",
@@ -110,17 +181,62 @@
       "required": false,
       "allowedTypes": [
         "images"
-      ]
-    },
-    "email": {
-      "type": "string",
-      "required": true
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "stylesConfig": {
       "type": "component",
       "repeatable": false,
       "required": true,
-      "component": "styles-config.styles-config"
+      "component": "styles-config.styles-config",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "date": {
+      "type": "date",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "time": {
+      "type": "time",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "email": {
+      "displayName": "email",
+      "type": "component",
+      "repeatable": true,
+      "component": "email.email",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "link": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
     }
   }
 }
