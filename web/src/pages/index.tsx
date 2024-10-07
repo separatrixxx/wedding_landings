@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from "next/router";
 import { setLocale } from "../../helpers/locale.helper";
-import { ErrorPage } from "../../page_components/ErrorPage/ErrorPage";
 import { useEffect } from 'react';
 
 
