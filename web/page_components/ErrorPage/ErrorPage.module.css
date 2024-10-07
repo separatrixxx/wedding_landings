@@ -7,13 +7,12 @@
 	height: 100vh;
 
 	transition-duration: 300ms;
-
-	color: var(--dark);
 }
 
 .errorText {
 	cursor: pointer;
 	transition-duration: 300ms;
+	color: var(--errorPage) !important;
 }
 
 .errorText:active {
