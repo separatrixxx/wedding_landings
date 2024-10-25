@@ -62,6 +62,30 @@
 	font-weight: 400;
 }
 
+.modalBody {
+	display: grid;
+	align-items: center;
+
+	width: 500px;
+	height: 100px;
+
+	border-radius: 20px;
+	background: var(--light);
+	justify-items: center;
+}
+
+.modalBody > input {
+	width: 80%;
+	height: 30px;
+	padding: 3px 10px;
+
+	border-radius: 10px;
+	outline: 1px solid var(--dark);
+
+	font-family: var(--fontCommon);
+	font-weight: 400;
+}
+
 .imageBlock {
 	position: absolute;
 	z-index: 1;

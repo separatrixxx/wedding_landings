@@ -15,11 +15,11 @@ export async function sendAnswers(questions: QuestionInterface[], answers: Answe
             message += '\n';
 
             for (let a of ans.answers) {
-                message += a.text;
+                message += a;
                 message += '\n';
             }
 
-            message += '\n\n';
+            message += '\n';
         }
 
         message += `${setLocale(router.locale).questions_text} ${name}`;
