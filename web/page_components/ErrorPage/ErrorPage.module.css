@@ -12,6 +12,7 @@
 .errorText {
 	cursor: pointer;
 	transition-duration: 300ms;
+
 	color: var(--errorPage) !important;
 }
 

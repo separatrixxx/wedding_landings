@@ -22,9 +22,7 @@ export async function sendAnswers(questions: QuestionInterface[], answers: Answe
             message += '\n\n';
         }
 
-        message += setLocale(router.locale).questions_text;
-        message += ' ';
-        message += name;
+        message += `${setLocale(router.locale).questions_text} ${name}`;
 
         const requests = emails.map(email => {
             return axios.post(process.env.NEXT_PUBLIC_DOMAIN + '/api/emails', {
