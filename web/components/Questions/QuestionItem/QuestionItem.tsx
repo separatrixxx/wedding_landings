@@ -8,6 +8,7 @@ import cn from 'classnames';
 
 export const QuestionItem = ({ question, type, setAnswers }: QuestionItemProps): JSX.Element => {
     const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
+    const [areaAnswer, setAreaAnswer] = useState<string>('');
 
     const hasOnlyOne = question.answers.some(a => typeof a !== 'string' && a.isOnlyOne);
 
@@ -36,7 +37,10 @@ export const QuestionItem = ({ question, type, setAnswers }: QuestionItemProps):
                     }
     
                     setSelectedAnswers(filteredAnswers);
-                    const newAnswers = [...prev.filter(a => a.question !== question.question), { question: question.question, answers: filteredAnswers }];
+                    const newAnswers = [...prev.filter(a => a.question !== question.question), { question: question.question, answers: filteredAnswers
+                        .map(f => detail ? f + ': ' + detail : f)
+                    }];
+
                     return newAnswers;
                 }
             } else {
@@ -44,6 +48,7 @@ export const QuestionItem = ({ question, type, setAnswers }: QuestionItemProps):
                 const newAnswers = [...prev.filter(a => a.question !== question.question), { question: question.question, answers: [
                     !isTextArea ? answer : answer + ': ' + detail
                 ] }];
+
                 return newAnswers;
             }
         });
@@ -67,7 +72,8 @@ export const QuestionItem = ({ question, type, setAnswers }: QuestionItemProps):
                 {question.answers.map((a, i) => {
                     const answerText = typeof a === 'string' ? a : a.answer;
                     const isOnlyOne = typeof a !== 'string' && a.isOnlyOne;
-                    const isTextArea = typeof a !== 'string' && a.isTextArea;
+                    const isTextArea = typeof a !== 'string' && a.isTextArea; 
+                    
 
                     return (
                         <div key={i} className={styles.inputDiv}>
@@ -82,8 +88,12 @@ export const QuestionItem = ({ question, type, setAnswers }: QuestionItemProps):
                                 <Htag tag='s'>{answerText}</Htag>
                             </label>
                             {isTextArea && selectedAnswers.includes(answerText) && (
-                                <input id={answerText + '_Area'} name={answerText} className={styles.textarea}
-                                onChange={e => handleTextChange(e, a.answer)} />
+                                <input id={answerText + '_area'} name={answerText} className={styles.textarea}
+                                    value={(areaAnswer)}
+                                    onChange={(e) => {
+                                        setAreaAnswer(e.target.value);
+                                        handleTextChange(e, a.answer)
+                                    }} />
                             )}
                         </div>
                     );
